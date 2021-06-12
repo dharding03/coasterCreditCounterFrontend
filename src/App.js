@@ -5,10 +5,20 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p> 
+        <img src="./Banshee.JPG" className="App-logo" alt="logo" />
+        <form>
+          <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username"></input>
+          </div>
+          <div>
+            <label for="password">Password:</label>
+            <input type="text" id="password" name="password"></input>
+          </div>
+          <div>
+            <input type="submit" id="login"  value= "Login" name="login"></input>
+          </div>
+        </form> 
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -23,3 +33,4 @@ function App() {
 }
 
 export default App;
+
