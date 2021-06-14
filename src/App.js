@@ -1,5 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
+import "../src/slideshow/style.css";
+import "./slideshow/index.js"
+import Slideshow from './slideshow/index.js';
 
 function App() {
   return (
@@ -33,4 +36,4 @@ function App() {
 }
 
 export default App;
-
+<Slideshow />
