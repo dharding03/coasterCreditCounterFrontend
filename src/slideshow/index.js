@@ -1,8 +1,9 @@
+import src from '*.avif';
 import React, { useState, useEffect } from 'react';
 
 import "./style.css";
 
-export default function Slideshow({ images = ['../Banshee.JPG', '../Diamondback.JPG'], interval = 3000 }) {
+export default function Slideshow({ images = ['./Banshee.JPG', './Diamondback.JPG'], interval = 3000 }) {
     const [thumbnails, setThumbnails] = useState([]);
     const [previousSlideStyle, setPreviousSlideStyle] = useState({});
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -86,7 +87,7 @@ export default function Slideshow({ images = ['../Banshee.JPG', '../Diamondback.
                 <span onClick={previous}>Previous</span>
                 <span onClick={next}>Next</span>
             </div>
-            Slideshow
+            
         </section>
     )
 }

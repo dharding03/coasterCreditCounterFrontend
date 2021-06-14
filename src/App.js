@@ -8,6 +8,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <Slideshow />
         <img src="./Banshee.JPG" className="App-logo" alt="logo" />
         <form>
           <div>
