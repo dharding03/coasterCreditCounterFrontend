@@ -5,10 +5,13 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <h1>Coaster Credit Counter</h1>
         <img src={logo} className="App-logo" alt="logo" />
+        
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p> 
+        <h1> Coaster Credit Counter</h1>
         <a
           className="App-link"
           href="https://reactjs.org"
