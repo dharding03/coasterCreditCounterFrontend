@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 import {API_BASE_URL, ACCESS_TOKEN_NAME} from './apiConstants'
+import {withRouter} from 'react-router-dom';
 
 
 function RegistrationForm(props) {
@@ -47,11 +48,11 @@ function RegistrationForm(props) {
         
     }
     const redirectToHome = () => {
-        props.updateTitle('Home')
+        // props.updateTitle('Home')
         props.history.push('/home');
     }
     const redirectToLogin = () => {
-        props.updateTitle('Login')
+        // props.updateTitle('Login')
         props.history.push('/login'); 
     }
     const handleSubmitClick = (e) => {
@@ -117,4 +118,4 @@ function RegistrationForm(props) {
     )
 }
 
-export default RegistrationForm;
+export default withRouter (RegistrationForm);
