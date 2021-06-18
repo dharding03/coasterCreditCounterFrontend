@@ -1,40 +1,39 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 import "../src/slideshow/style.css";
-import "./slideshow/index.js"
-import Slideshow from './slideshow/index.js';
+import "../src/slideshow/controls.js"
+import Slideshow from './slideshow/controls.js';
+import Login from './Login/components/loginForm';
+import RegistrationForm from './Login/components/registrationForm';
+import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+
+
+
+
+
 
 function App() {
+
   return (
     <div className="App">
       <header className="App-header">
+        {/* <RegistrationForm /> */}
         <Slideshow />
-        <img src="./Banshee.JPG" className="App-logo" alt="logo" />
-        <form>
-          <div>
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username"></input>
-          </div>
-          <div>
-            <label for="password">Password:</label>
-            <input type="text" id="password" name="password"></input>
-          </div>
-          <div>
-            <input type="submit" id="login"  value= "Login" name="login"></input>
-          </div>
-        </form> 
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Login />
+
+            
+
+
       </header>
+      
+        <Router> 
+          <Switch>
+            <Route path="/register" component={RegistrationForm}/>
+          </Switch>
+        </Router>
+        
     </div>
   );
 }
 
 export default App;
-
