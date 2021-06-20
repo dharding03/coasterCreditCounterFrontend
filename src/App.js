@@ -3,7 +3,6 @@ import './App.css';
 import "../src/slideshow/style.css";
 import "../src/slideshow/controls.js"
 import Slideshow from './slideshow/controls.js';
-import Login from './Login/components/loginForm';
 import RegistrationForm from './Login/components/registrationForm';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import LoginForm from './Login/components/loginForm';
