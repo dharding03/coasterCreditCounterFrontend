@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import "../src/slideshow/style.css";
+import "../src/slideshow/controls.css";
 import "../src/slideshow/controls.js"
 import Slideshow from './slideshow/controls.js';
 import RegistrationForm from './Login/components/registrationForm';

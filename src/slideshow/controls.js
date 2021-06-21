@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import "./style.css";
+import "./controls.css";
 
 function Slideshow({ images = ['./Diamondback.JPG', './Banshee.JPG', './Orion.JPG', './copperheadLogo.JPG', './furyLogo.JPG', './furyLift.JPG', './nighthawkLoop.JPG'], interval = 3000 }) {
     const [state, setState] = useState({
@@ -16,7 +16,7 @@ function Slideshow({ images = ['./Diamondback.JPG', './Banshee.JPG', './Orion.JP
         else {
             setState(prevState => ({
                 ...prevState,
-                currentSlide: prevState.currentSlide - 1
+                currentSlide: images.length - 1
             }))
         }
     }
@@ -50,8 +50,9 @@ function Slideshow({ images = ['./Diamondback.JPG', './Banshee.JPG', './Orion.JP
                 </section>
             </div>
 
-
         </section>
+
+
 
     )
 }

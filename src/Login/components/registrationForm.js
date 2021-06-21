@@ -20,12 +20,18 @@ function RegistrationForm(props) {
     }
     const sendDetailsToServer = () => {
         if(state.email.length && state.password.length) {
-            props.showError(null);
+            // props.showError(null);
             const payload={
                 "email":state.email,
                 "password":state.password,
             }
-            axios.post(API_BASE_URL+'/user/register', payload)
+            const tempApiBaseUrl = "http://localhost:7080"
+            let config = {
+                headers: {
+                    "Access-Control-Allow-Origin": "*",
+                }
+              }
+            axios.post(tempApiBaseUrl+'/user/register', payload, config)
                 .then(function (response) {
                     if(response.status === 200){
                         setState(prevState => ({
@@ -34,9 +40,9 @@ function RegistrationForm(props) {
                         }))
                         localStorage.setItem(ACCESS_TOKEN_NAME,response.data.token);
                         redirectToHome();
-                        props.showError(null)
+                        // props.showError(null)
                     } else{
-                        props.showError("Some error ocurred");
+                        // props.showError("Some error ocurred");
                     }
                 })
                 .catch(function (error) {
