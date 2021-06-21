@@ -8,10 +8,6 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 import LoginForm from './Login/components/loginForm';
 
 
-
-
-
-
 function App() {
 
   return (
@@ -19,11 +15,6 @@ function App() {
       <header className="App-header">
         {/* <RegistrationForm /> */}
         <Slideshow />
-       
-
-
-
-
       </header>
 
       <Router>
