@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import "./controls.css";
 
-function Slideshow({ images = ['./Diamondback.JPG', './Banshee.JPG', './Orion.JPG', './copperheadLogo.JPG', './furyLogo.JPG', './furyLift.JPG', './nighthawkLoop.JPG'], interval = 3000 }) {
+function Slideshow({ images = ['./Diamondback.JPG', './Banshee.JPG', './Orion.JPG', './copperheadLogo.JPG', './furyLogo.JPG', './furyLift.JPG', './nighthawkLoop.JPG', './gatekeeperLogo.JPG', './millenniumForce.JPG', './raptor.JPG', './steelVengeance.JPG', './steelVengeanceLogo.JPG', './valravnLogo.JPG', './wickedtwister.JPG']}) {
     const [state, setState] = useState({
         currentSlide: 0
     })

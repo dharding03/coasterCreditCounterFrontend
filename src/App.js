@@ -6,6 +6,7 @@ import Slideshow from './slideshow/controls.js';
 import RegistrationForm from './Login/components/registrationForm';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import LoginForm from './Login/components/loginForm';
+import SearchBar from './SearchBar/components/searchBar';
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <SearchBar />
         {/* <RegistrationForm /> */}
         <Slideshow />
       </header>

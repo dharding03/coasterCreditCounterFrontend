@@ -117,7 +117,7 @@ function RegistrationForm(props) {
             </div>
             <div className="mt-2">
                 <span>Already have an account? </span>
-                <span className="loginText" onClick={() => redirectToLogin()}>Login here</span> 
+                <span className="loginText" onClick={() => redirectToLogin()}><button type="login">Login here</button></span> 
             </div>
             
         </div>
