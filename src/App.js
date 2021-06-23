@@ -7,12 +7,12 @@ import RegistrationForm from './Login/components/registrationForm';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import LoginForm from './Login/components/loginForm';
 import SearchBar from './SearchBar/components/searchBar';
-<<<<<<< HEAD
+
  
-=======
+
 import AddCredit from './credits/creditspage';
 
->>>>>>> c092f53414e08dbee9550009922163cb9b6287b1
+
 function App() {
   return (
     <div className="App">
