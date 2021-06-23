@@ -1,60 +1,112 @@
-import React, { useState } from 'react';
+import React from 'react';
+import Carousel from 'react-bootstrap/Carousel'
 
 import "./controls.css";
 
-function Slideshow({ images = ['./Diamondback.JPG', './Banshee.JPG', './Orion.JPG', './copperheadLogo.JPG', './furyLogo.JPG', './furyLift.JPG', './nighthawkLoop.JPG', './gatekeeperLogo.JPG', './millenniumForce.JPG', './raptor.JPG', './steelVengeance.JPG', './steelVengeanceLogo.JPG', './valravnLogo.JPG', './wickedtwister.JPG']}) {
-    const [state, setState] = useState({
-        currentSlide: 0
-    })
-    function previous() {
-        if (state.currentSlide > 0) {
-            setState(prevState => ({
-                ...prevState,
-                currentSlide: prevState.currentSlide - 1
-            }))
-        }
-        else {
-            setState(prevState => ({
-                ...prevState,
-                currentSlide: images.length - 1
-            }))
-        }
-    }
-
-    function next() {
-        if (state.currentSlide === images.length - 1) {
-            setState(prevState => ({
-                ...prevState,
-                currentSlide: 0
-            }))
-        }
-        else {
-            setState(prevState => ({
-                ...prevState,
-                currentSlide: prevState.currentSlide + 1
-            }))
-        }
-    }
-
+function Slideshow() {
     return (
-        <section className="slideshow">
-            <div className="slideshow-controller">
-                <span onClick={previous}>Previous</span>
-                <span onClick={next}>Next</span>
-            </div>
-            <div className="slide-holder">
-                <section className="slide-current-slide">
-                    <div className="slide-thumbnail">
-                        <img src={images[state.currentSlide]} className="App-logo" alt="logo" />
-                    </div>
-                </section>
-            </div>
-
-        </section>
-
-
-
-    )
+        <Carousel>
+            <Carousel.Item>
+                <img
+                    className="diamondback"
+                    src="./Diamondback.JPG"
+                    alt="logo"
+                />
+            </Carousel.Item>
+            <Carousel.Item>
+                <img
+                    className="banshee"
+                    src="./Banshee.JPG"
+                    alt="logo"
+                />
+            </Carousel.Item>
+            <Carousel.Item>
+                <img
+                    className="orion"
+                    src="./Orion.JPG"
+                    alt="logo"
+                />
+            </Carousel.Item>
+            <Carousel.Item>
+                <img
+                    className="copperheadStrikeLogo"
+                    src="./copperheadLogo.JPG"
+                    alt="logo"
+                />
+            </Carousel.Item>
+            <Carousel.Item>
+                <img
+                    className="furyLift"
+                    src="./furyLift.JPG"
+                    alt="logo"
+                />
+            </Carousel.Item>
+            <Carousel.Item>
+                <img
+                    className="furyLogo"
+                    src="./furyLogo.JPG"
+                    alt="logo"
+                />
+            </Carousel.Item>
+            <Carousel.Item>
+                <img
+                    className="gatekeeperLogo"
+                    src="./gatekeeperLogo.JPG"
+                    alt="logo"
+                />
+            </Carousel.Item>
+            <Carousel.Item>
+                <img
+                    className="millenniumforce"
+                    src="./millenniumForce.JPG"
+                    alt="logo"
+                />
+            </Carousel.Item>
+            <Carousel.Item>
+                <img
+                    className="nighthawkLoop"
+                    src="./nighthawkLoop.JPG"
+                    alt="logo"
+                />
+            </Carousel.Item>
+            <Carousel.Item>
+                <img
+                    className="raptor"
+                    src="./raptor.JPG"
+                    alt="logo"
+                />
+            </Carousel.Item>
+            <Carousel.Item>
+                <img
+                    className="steelVengeance"
+                    src="./steelVengeance.JPG"
+                    alt="logo"
+                />
+            </Carousel.Item>
+            <Carousel.Item>
+                <img
+                    className="steelVengeanceLogo"
+                    src="./steelVengeanceLogo.JPG"
+                    alt="logo"
+                />
+            </Carousel.Item>
+            <Carousel.Item>
+                <img
+                    className="valravnLogo"
+                    src="./valravnLogo.JPG"
+                    alt="logo"
+                />
+            </Carousel.Item>
+            <Carousel.Item>
+                <img
+                    className="wickedtwister"
+                    src="./wickedtwister.JPG"
+                    alt="logo"
+                />
+            </Carousel.Item>
+        </Carousel>
+    );
 }
+
 
 export default Slideshow;
