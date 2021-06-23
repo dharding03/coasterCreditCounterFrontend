@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
-import Slideshow from './slideshow/controls.js';
 import RegistrationForm from './Login/components/registrationForm';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import LoginForm from './Login/components/loginForm';
 import SearchBar from './SearchBar/components/searchBar';
+import Carousel from './slideshow/controls.js';
 
 function App() {
   return (
@@ -12,8 +12,8 @@ function App() {
       <header className="App-header">
 
 
+        <Carousel />
         <SearchBar />
-        <Slideshow />
       </header>
       <div className="routes">
         <Router>
