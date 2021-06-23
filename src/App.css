@@ -7,7 +7,10 @@
   pointer-events: none;
 }
 
-
+.routes {
+  display:flex;
+  justify-content: center;
+}
 
 .App-header {
   background-color: #282c34;
