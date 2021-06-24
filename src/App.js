@@ -5,10 +5,12 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 import LoginForm from './Login/components/loginForm';
 import SearchBar from './SearchBar/components/searchBar';
 import Carousel from './slideshow/controls.js';
+import NavBar from './navbar/navbar';
 
 function App() {
   return (
     <div className="App">
+      <NavBar />
       <header className="App-header">
 
 
