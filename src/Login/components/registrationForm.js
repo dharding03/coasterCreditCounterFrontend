@@ -1,8 +1,6 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 import {API_BASE_URL, ACCESS_TOKEN_NAME} from './apiConstants'
-import {withRouter} from 'react-router-dom';
-
 
 function RegistrationForm(props) {
     const [state , setState] = useState({
@@ -124,4 +122,4 @@ function RegistrationForm(props) {
     )
 }
 
-export default withRouter (RegistrationForm);
+export default RegistrationForm;

@@ -1,8 +1,6 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 import {API_BASE_URL, ACCESS_TOKEN_NAME} from './apiConstants';
-import { withRouter } from 'react-router-dom';
-
 
 function LoginForm(props) {
     const [state, setState] = useState({
@@ -85,4 +83,4 @@ function LoginForm(props) {
     )
 }
 
-export default withRouter (LoginForm);
+export default LoginForm;
