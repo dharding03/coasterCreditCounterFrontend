@@ -11,6 +11,10 @@ import Credits from './navbar/rollerCoasters';
 
 
 
+ 
+
+
+
 function App() {
   return (
     <div className="App">
@@ -39,5 +43,6 @@ function App() {
 
 
 }
+
 
 export default App;
