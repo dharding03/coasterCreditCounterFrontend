@@ -4,6 +4,8 @@ import {API_BASE_URL, ACCESS_TOKEN_NAME} from './apiConstants'
 
 function RegistrationForm(props) {
     const [state , setState] = useState({
+        firstName : "",
+        lastName : "",
         email : "",
         password : "",
         confirmPassword: "",
@@ -70,6 +72,28 @@ function RegistrationForm(props) {
     return(
         <div className="card col-12 col-lg-4 login-card mt-2 hv-center">
             <form>
+                <div className="form-group text-left">
+                    <label htmlFor="firstName">First Name</label>
+                    <input type ="firstName"
+                    className="form-control"
+                    id="firstName"
+                    placeholder="First Name"
+                    value={state.firstName}
+                    onChange={handleChange}
+                    />
+
+                </div>
+                <div className="form-group text-left">
+                    <label htmlFor="lastName">Last Name</label>
+                    <input type ="lastName"
+                    className="form-control"
+                    id="lastName"
+                    placeholder="Last Name"
+                    value={state.lastName}
+                    onChange={handleChange}
+                    />
+
+                </div>
                 <div className="form-group text-left">
                 <label htmlFor="exampleInputEmail1">Email address</label>
                 <input type="email" 
