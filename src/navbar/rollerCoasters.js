@@ -1,13 +1,14 @@
-import React, {Component } from 'react';
+import React from 'react';
 
-class Credits extends Component {
-    render() {
+function Credits() {
+
         return (
             <div>
                 <h2>My Credits</h2>
+                
             </div>
         );
     }
-}
+
 
 export default Credits;
