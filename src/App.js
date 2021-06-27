@@ -35,7 +35,7 @@ function App() {
             <Route path="/bucketlist" component={BucketList}/>
             <Route path="/login" component={LoginForm} />
             <Route path="/register" component={RegistrationForm} />
-            <Route path="/home" component={App}/>
+            <Route path="/home" component={Home}/>
             <Route path="/rollercoasters" component={Credits}/>
           </Switch>
         </Router>
