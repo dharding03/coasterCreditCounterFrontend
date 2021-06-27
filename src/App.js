@@ -18,7 +18,7 @@ import Credits from './navbar/rollerCoasters';
 function App() {
   return (
     <div className="App">
-      <NavBar />
+      <NavBar className="nav"/>
       <header className="App-header">
         <Carousel />
 
