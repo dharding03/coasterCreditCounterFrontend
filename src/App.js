@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Home from './HomePage/Home';
 import RegistrationForm from './Login/components/registrationForm';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import SearchBar from './SearchBar/components/searchBar';
@@ -11,7 +12,7 @@ import Credits from './navbar/rollerCoasters';
 
 
 
- 
+
 
 
 
@@ -30,6 +31,7 @@ function App() {
             <Route exact path="/">
               <Redirect to="/login"></Redirect>
             </Route>
+          
             <Route path="/bucketlist" component={BucketList}/>
             <Route path="/login" component={LoginForm} />
             <Route path="/register" component={RegistrationForm} />
