@@ -4,8 +4,8 @@ import './Home/HomePageVideo';
 function HomePageVideo() {
     return (
         <div>
-            <video id="background-video" loop autoplay>
-                <source src={furyVideo.MOV} type="video"/>
+            <video id="background-video" loop autoPlay>
+                <source src={furyVideo.mp4} type="video"/>
                     
             </video>
         </div>
