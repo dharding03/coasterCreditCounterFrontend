@@ -5,8 +5,8 @@ function HomePageVideo() {
     return (
         <div>
             <video id="background-video" loop autoplay>
-                <source src="furyVideo.MOV" type="video"/>
-                    {/* Your browser does not support the video tag. */}
+                <source src={furyVideo.MOV} type="video"/>
+                    
             </video>
         </div>
             )
