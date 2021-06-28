@@ -6,6 +6,7 @@ function RegistrationForm(props) {
     const [state , setState] = useState({
         firstName : "",
         lastName : "",
+        username : "",
         email : "",
         password : "",
         confirmPassword: "",
@@ -22,6 +23,9 @@ function RegistrationForm(props) {
         if(state.email.length && state.password.length) {
             // props.showError(null);
             const payload={
+                "firstName":state.firstName,
+                "lastName":state.lastName,
+                "username":state.username,
                 "email":state.email,
                 "password":state.password,
             }
@@ -31,7 +35,7 @@ function RegistrationForm(props) {
                     "Access-Control-Allow-Origin": "*",
                 }
               }
-            axios.post(tempApiBaseUrl+'/user/register', payload, config)
+            axios.post(tempApiBaseUrl+'/users/register', payload, config)
                 .then(function (response) {
                     if(response.status === 200){
                         setState(prevState => ({
@@ -104,7 +108,15 @@ function RegistrationForm(props) {
                        value={state.email}
                        onChange={handleChange}
                 />
-
+                <div className="form-group text-left">
+                    <label htmlFor="username">Username</label>
+                    <input type="useranme"
+                    className="form-control"
+                    id="username"
+                    placeholder="Enter username"
+                    value={state.username}
+                    onChange={handleChange} />
+                </div>
                 </div>
                 <div className="form-group text-left">
                     <label htmlFor="exampleInputPassword1">Password</label>
