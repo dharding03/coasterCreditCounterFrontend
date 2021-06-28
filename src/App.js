@@ -23,7 +23,7 @@ function App() {
         <Router>
           <Switch>
             <Route exact path="/">
-              <Redirect to="/login"></Redirect>
+              <Redirect to="/home"></Redirect>
             </Route>
           
             <Route path="/bucketlist" component={BucketList}/>
@@ -36,9 +36,5 @@ function App() {
       </div>
     </div>
   );
-
-
 }
-
-
 export default App;
