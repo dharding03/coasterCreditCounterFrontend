@@ -1,11 +1,12 @@
 import React from 'react';
-import './Home/HomePageVideo';
+import '../HomePage/Home/'
+import furyVideo from './furyVideo.mp4';
 
 function HomePageVideo() {
     return (
         <div>
             <video id="background-video" loop autoPlay>
-                <source src={furyVideo.mp4} type="video"/>
+                <source src={furyVideo} type="video/mp4"/>
                     
             </video>
         </div>
