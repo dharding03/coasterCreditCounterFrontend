@@ -10,12 +10,6 @@ import BucketList from './navbar/bucketlist';
 import LoginForm from './Login/components/loginForm';
 import Credits from './navbar/rollerCoasters';
 
-
-
-
-
-
-
 function App() {
   return (
     <div className="App">
