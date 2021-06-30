@@ -10,7 +10,7 @@ function RegistrationForm(props) {
         email : "",
         password : "",
         confirmPassword: "",
-        successMessage: null
+        successMessage: ""
     })
     const handleChange = (e) => {
         const {id , value} = e.target   
@@ -23,19 +23,19 @@ function RegistrationForm(props) {
         if(state.email.length && state.password.length) {
             // props.showError(null);
             const payload={
-                "firstName":state.firstName,
-                "lastName":state.lastName,
-                "username":state.username,
-                "email":state.email,
-                "password":state.password,
+                firstName:state.firstName,
+                lastName:state.lastName,
+                username:state.username,
+                email:state.email,
+                password:state.password,
             }
-            const tempApiBaseUrl = "http://localhost:7080"
+            const ApiBaseUrl = "http://localhost:7080"
             let config = {
                 headers: {
                     "Access-Control-Allow-Origin": "*",
                 }
               }
-            axios.post(tempApiBaseUrl+'/users/register', payload, config)
+            axios.post(ApiBaseUrl+'/users/register', payload, config)
                 .then(function (response) {
                     if(response.status === 200){
                         setState(prevState => ({
@@ -68,9 +68,13 @@ function RegistrationForm(props) {
     const handleSubmitClick = (e) => {
         e.preventDefault();
         if(state.password === state.confirmPassword) {
-            sendDetailsToServer()    
+            const passwordRequirements = /^(.{0,7}|[^0-9]*|[^A-Z]*|[^a-z]*|[a-zA-Z0-9]*)$/;
+            const isValid = passwordRequirements.test(state.password)
+            sendDetailsToServer({isValid})    
         } else {
-            props.showError('Passwords do not match');
+            const isNotValid = "Password is invalid"
+            props.showError({isNotValid});
+            
         }
     }
     return(
