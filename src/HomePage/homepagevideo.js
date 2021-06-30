@@ -1,13 +1,14 @@
 import React from 'react';
-import '../HomePage/Home/'
-import ReactPlayer from 'react-player';
+import './Home/HomePageVideo';
 
 function HomePageVideo() {
     return (
-        <>
-            <ReactPlayer
-                url="https://youtu.be/bCHM41ZdTzQ" />
-        </>
+        <div>
+            <video id="background-video" loop autoplay>
+                <source src={furyVideo.MOV} type="video"/>
+                    
+            </video>
+        </div>
             )
 }
 
