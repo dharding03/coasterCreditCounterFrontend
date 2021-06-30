@@ -1,7 +1,5 @@
 import React from 'react';
 import './Home.css';
-import ReactPlayer from 'react-player';
-
 <script>
   function myFunction() {
     document.body.style.backgroundColor = "lightblue"
