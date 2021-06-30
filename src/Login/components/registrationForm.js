@@ -13,7 +13,7 @@ function RegistrationForm(props) {
         email: "",
         password: "",
         confirmPassword: "",
-        successMessage: null
+        successMessage: ""
     })
     const handleChange = (e) => {
         const { id, value } = e.target
@@ -25,20 +25,34 @@ function RegistrationForm(props) {
     const sendDetailsToServer = () => {
         if (state.email.length && state.password.length) {
             // props.showError(null);
+<<<<<<< HEAD
             const payload = {
                 "firstName": state.firstName,
                 "lastName": state.lastName,
                 "username": state.username,
                 "email": state.email,
                 "password": state.password,
+=======
+            const payload={
+                firstName:state.firstName,
+                lastName:state.lastName,
+                username:state.username,
+                email:state.email,
+                password:state.password,
+>>>>>>> 339372550d3a1833aec1d45171d9bb63c98af029
             }
-            const tempApiBaseUrl = "http://localhost:7080"
+            const ApiBaseUrl = "http://localhost:7080"
             let config = {
                 headers: {
                     "Access-Control-Allow-Origin": "*",
                 }
+<<<<<<< HEAD
             }
             axios.post(tempApiBaseUrl + '/users/register', payload, config)
+=======
+              }
+            axios.post(ApiBaseUrl+'/users/register', payload, config)
+>>>>>>> 339372550d3a1833aec1d45171d9bb63c98af029
                 .then(function (response) {
                     if (response.status === 200) {
                         setState(prevState => ({
@@ -70,10 +84,19 @@ function RegistrationForm(props) {
     }
     const handleSubmitClick = (e) => {
         e.preventDefault();
+<<<<<<< HEAD
         if (state.password === state.confirmPassword) {
             sendDetailsToServer()
+=======
+        if(state.password === state.confirmPassword) {
+            const passwordRequirements = /^(.{0,7}|[^0-9]*|[^A-Z]*|[^a-z]*|[a-zA-Z0-9]*)$/;
+            const isValid = passwordRequirements.test(state.password)
+            sendDetailsToServer({isValid})    
+>>>>>>> 339372550d3a1833aec1d45171d9bb63c98af029
         } else {
-            props.showError('Passwords do not match');
+            const isNotValid = "Password is invalid"
+            props.showError({isNotValid});
+            
         }
     }
     return (
