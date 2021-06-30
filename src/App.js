@@ -14,11 +14,11 @@ function App() {
   return (
     <div className="App">
       <NavBar className="nav"/>
-      <header className="App-header">
-        <Carousel />
+      {/* <header className="App-header">
+        {/* <Carousel />
 
-        <SearchBar />
-      </header>
+        <SearchBar /> */}
+      {/* </header> */} 
       <div className="routes">
         <Router>
           <Switch>

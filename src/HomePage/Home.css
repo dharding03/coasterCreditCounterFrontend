@@ -13,3 +13,7 @@
   position: fixed; /* optional depending on what you want to do in your app */
   opacity: 0.5%;
 }
+#header {
+  background-color: orange;
+}
+
