@@ -25,34 +25,34 @@ function RegistrationForm(props) {
     const sendDetailsToServer = () => {
         if (state.email.length && state.password.length) {
             // props.showError(null);
-<<<<<<< HEAD
+
             const payload = {
                 "firstName": state.firstName,
                 "lastName": state.lastName,
                 "username": state.username,
                 "email": state.email,
                 "password": state.password,
-=======
-            const payload={
-                firstName:state.firstName,
-                lastName:state.lastName,
-                username:state.username,
-                email:state.email,
-                password:state.password,
->>>>>>> 339372550d3a1833aec1d45171d9bb63c98af029
-            }
+
+                const payload = {
+                    firstName: state.firstName,
+                    lastName: state.lastName,
+                    username: state.username,
+                    email: state.email,
+                    password: state.password,
+
+                }
             const ApiBaseUrl = "http://localhost:7080"
             let config = {
-                headers: {
-                    "Access-Control-Allow-Origin": "*",
+                    headers: {
+                        "Access-Control-Allow-Origin": "*",
+                    }
+
                 }
-<<<<<<< HEAD
-            }
             axios.post(tempApiBaseUrl + '/users/register', payload, config)
-=======
-              }
-            axios.post(ApiBaseUrl+'/users/register', payload, config)
->>>>>>> 339372550d3a1833aec1d45171d9bb63c98af029
+
+            }
+            axios.post(ApiBaseUrl + '/users/register', payload, config)
+
                 .then(function (response) {
                     if (response.status === 200) {
                         setState(prevState => ({
@@ -84,114 +84,114 @@ function RegistrationForm(props) {
     }
     const handleSubmitClick = (e) => {
         e.preventDefault();
-<<<<<<< HEAD
+
         if (state.password === state.confirmPassword) {
             sendDetailsToServer()
-=======
-        if(state.password === state.confirmPassword) {
-            const passwordRequirements = /^(.{0,7}|[^0-9]*|[^A-Z]*|[^a-z]*|[a-zA-Z0-9]*)$/;
-            const isValid = passwordRequirements.test(state.password)
-            sendDetailsToServer({isValid})    
->>>>>>> 339372550d3a1833aec1d45171d9bb63c98af029
-        } else {
-            const isNotValid = "Password is invalid"
-            props.showError({isNotValid});
-            
+
+            if (state.password === state.confirmPassword) {
+                const passwordRequirements = /^(.{0,7}|[^0-9]*|[^A-Z]*|[^a-z]*|[a-zA-Z0-9]*)$/;
+                const isValid = passwordRequirements.test(state.password)
+                sendDetailsToServer({ isValid })
+
+            } else {
+                const isNotValid = "Password is invalid"
+                props.showError({ isNotValid });
+
+            }
         }
-    }
-    return (
+        return (
 
-        <div>
-            <header className="App-header">
-                <Carousel />
+            <div>
+                <header className="App-header">
+                    <Carousel />
 
-                <SearchBar />
-            </header>
+                    <SearchBar />
+                </header>
 
 
-            <div className="card col-12 col-lg-4 login-card mt-2 hv-center">
-                <form>
-                    <div className="form-group text-left">
-                        <label htmlFor="firstName">First Name</label>
-                        <input type="firstName"
-                            className="form-control"
-                            id="firstName"
-                            placeholder="First Name"
-                            value={state.firstName}
-                            onChange={handleChange}
-                        />
-
-                    </div>
-                    <div className="form-group text-left">
-                        <label htmlFor="lastName">Last Name</label>
-                        <input type="lastName"
-                            className="form-control"
-                            id="lastName"
-                            placeholder="Last Name"
-                            value={state.lastName}
-                            onChange={handleChange}
-                        />
-
-                    </div>
-                    <div className="form-group text-left">
-                        <label htmlFor="exampleInputEmail1">Email address</label>
-                        <input type="email"
-                            className="form-control"
-                            id="email"
-                            aria-describedby="emailHelp"
-                            placeholder="Enter email"
-                            value={state.email}
-                            onChange={handleChange}
-                        />
+                <div className="card col-12 col-lg-4 login-card mt-2 hv-center">
+                    <form>
                         <div className="form-group text-left">
-                            <label htmlFor="username">Username</label>
-                            <input type="useranme"
+                            <label htmlFor="firstName">First Name</label>
+                            <input type="firstName"
                                 className="form-control"
-                                id="username"
-                                placeholder="Enter username"
-                                value={state.username}
-                                onChange={handleChange} />
+                                id="firstName"
+                                placeholder="First Name"
+                                value={state.firstName}
+                                onChange={handleChange}
+                            />
+
                         </div>
-                    </div>
-                    <div className="form-group text-left">
-                        <label htmlFor="exampleInputPassword1">Password</label>
-                        <input type="password"
-                            className="form-control"
-                            id="password"
-                            placeholder="Password"
-                            value={state.password}
-                            onChange={handleChange}
-                        />
-                    </div>
-                    <div className="form-group text-left">
-                        <label htmlFor="exampleInputPassword1">Confirm Password</label>
-                        <input type="password"
-                            className="form-control"
-                            id="confirmPassword"
-                            placeholder="Confirm Password"
-                            value={state.confirmPassword}
-                            onChange={handleChange}
-                        />
-                    </div>
-                    <button
-                        type="submit"
-                        className="btn btn-primary"
-                        onClick={handleSubmitClick}
-                    >
-                        Register
-                    </button>
-                </form>
-                <div className="alert alert-success mt-2" style={{ display: state.successMessage ? 'block' : 'none' }} role="alert">
-                    {state.successMessage}
-                </div>
-                <div className="mt-2">
-                    <span>Already have an account? </span>
-                    <span className="loginText" onClick={() => redirectToLogin()}><button type="login">Login here</button></span>
-                </div>
+                        <div className="form-group text-left">
+                            <label htmlFor="lastName">Last Name</label>
+                            <input type="lastName"
+                                className="form-control"
+                                id="lastName"
+                                placeholder="Last Name"
+                                value={state.lastName}
+                                onChange={handleChange}
+                            />
 
+                        </div>
+                        <div className="form-group text-left">
+                            <label htmlFor="exampleInputEmail1">Email address</label>
+                            <input type="email"
+                                className="form-control"
+                                id="email"
+                                aria-describedby="emailHelp"
+                                placeholder="Enter email"
+                                value={state.email}
+                                onChange={handleChange}
+                            />
+                            <div className="form-group text-left">
+                                <label htmlFor="username">Username</label>
+                                <input type="useranme"
+                                    className="form-control"
+                                    id="username"
+                                    placeholder="Enter username"
+                                    value={state.username}
+                                    onChange={handleChange} />
+                            </div>
+                        </div>
+                        <div className="form-group text-left">
+                            <label htmlFor="exampleInputPassword1">Password</label>
+                            <input type="password"
+                                className="form-control"
+                                id="password"
+                                placeholder="Password"
+                                value={state.password}
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <div className="form-group text-left">
+                            <label htmlFor="exampleInputPassword1">Confirm Password</label>
+                            <input type="password"
+                                className="form-control"
+                                id="confirmPassword"
+                                placeholder="Confirm Password"
+                                value={state.confirmPassword}
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <button
+                            type="submit"
+                            className="btn btn-primary"
+                            onClick={handleSubmitClick}
+                        >
+                            Register
+                        </button>
+                    </form>
+                    <div className="alert alert-success mt-2" style={{ display: state.successMessage ? 'block' : 'none' }} role="alert">
+                        {state.successMessage}
+                    </div>
+                    <div className="mt-2">
+                        <span>Already have an account? </span>
+                        <span className="loginText" onClick={() => redirectToLogin()}><button type="login">Login here</button></span>
+                    </div>
+
+                </div>
             </div>
-        </div>
-    )
-}
+        )
+    }
 
-export default RegistrationForm;
+    export default RegistrationForm;
