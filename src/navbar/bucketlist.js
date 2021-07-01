@@ -2,11 +2,6 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { ACCESS_TOKEN_NAME } from '../Login/components/apiConstants';
 
-import Carousel from '../slideshow/controls';
-// import SearchBar from '../../SearchBar/components/searchBar';
-import SearchBar from '../SearchBar/components/searchBar';
-
-
 function BucketList() {
     const [state, setState] = useState({
         coaster: "",
@@ -58,49 +53,38 @@ function BucketList() {
     }
 
     return (
+        <div className="card col-12 col-lg-4 addCoaster-card mt-2 hv-center">
+            <h2>My Bucket List</h2>
+            <div>
+                <form>
+                    <div className="form-group text-left">
+                        <label htmlFor="addcoaster" type="text">Add Coaster</label>
+                        <input
+                            type="coaster"
+                            className="form-control"
+                            id="coaster"
+                            placeholder="Add Coaster"
+                            value={state.coaster}
+                            onChange={handleChange} />
+                    </div>
+                    <div className="form-group text-left">
+                        <label htmlFor="addpark" type="text">Add Park</label>
+                        <input type="addPark"
+                            className="form-control"
+                            id="park"
+                            placeholder="Add Park"
+                            value={state.park}
+                            onChange={handleChange} />
+                    </div>
+                    <div>
+                        <button type="submit"
+                            className="btn btn-primary"
+                            onClick={handleSubmitClick}
+                        >Add
+                        </button>
+                    </div>
 
-
-        <div>
-            <header className="App-header">
-                <Carousel />
-
-                <SearchBar />
-            </header>
-
-
-            <div className="card col-12 col-lg-4 addCoaster-card mt-2 hv-center">
-                <h2>My Bucket List</h2>
-                <div>
-                    <form>
-                        <div className="form-group text-left">
-                            <label htmlFor="addcoaster" type="text">Add Coaster</label>
-                            <input
-                                type="coaster"
-                                className="form-control"
-                                id="coaster"
-                                placeholder="Add Coaster"
-                                value={state.coaster}
-                                onChange={handleChange} />
-                        </div>
-                        <div className="form-group text-left">
-                            <label htmlFor="addpark" type="text">Add Park</label>
-                            <input type="addPark"
-                                className="form-control"
-                                id="park"
-                                placeholder="Add Park"
-                                value={state.park}
-                                onChange={handleChange} />
-                        </div>
-                        <div>
-                            <button type="submit"
-                                className="btn btn-primary"
-                                onClick={handleSubmitClick}
-                            >Add
-                            </button>
-                        </div>
-
-                    </form>
-                </div>
+                </form>
             </div>
         </div>
     )
