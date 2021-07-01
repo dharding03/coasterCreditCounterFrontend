@@ -31,13 +31,13 @@ function RegistrationForm(props) {
                 email:state.email,
                 password:state.password,
             }
-            const ApiBaseUrl = "http://localhost:7080"
+            const apiBaseUrl = "http://localhost:7080"
             let config = {
                 headers: {
                     "Access-Control-Allow-Origin": "*",
                 }
               }
-            axios.post(ApiBaseUrl+'/users/register', payload, config)
+            axios.post(apiBaseUrl+'/users/register', payload, config)
                 .then(function (response) {
                     if(response.status === 200){
                         setState(prevState => ({
