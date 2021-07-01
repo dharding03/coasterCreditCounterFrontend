@@ -117,7 +117,7 @@ function RegistrationForm(props) {
                 />
                 <div className="form-group text-left">
                     <label htmlFor="username">Username</label>
-                    <input type="useranme"
+                    <input type="username"
                     className="form-control"
                     id="username"
                     placeholder="Enter username"
