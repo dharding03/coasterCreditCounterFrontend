@@ -10,6 +10,14 @@ function LoginForm(props) {
         password : "", 
         successMessage: null
     })
+
+    const apiBaseUrl = "http://localhost:7080"
+    let config = {
+        headers: {
+            "Access-Control-Allow-Origin": "*",
+        }
+      }
+
     const handleChange = (e) => {
         const {id , value} = e.target
         setState(prevState => ({
@@ -24,7 +32,7 @@ function LoginForm(props) {
             "email":state.email,
             "password":state.password
         }
-        axios.post(API_BASE_URL+'/users/login', payload)
+        axios.post(apiBaseUrl+'/users/login', payload)
         .then(function (response){
             if(response.status === 200){
                 setState(prevState => ({
