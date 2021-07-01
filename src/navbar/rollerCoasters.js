@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 import { ACCESS_TOKEN_NAME } from '../Login/components/apiConstants';
+import Carousel from '../slideshow/controls';
+import SearchBar from '../SearchBar/components/searchBar';
 
 function Credits() {
     const [state, setState] = useState({
@@ -28,7 +30,7 @@ function Credits() {
                     "Access-Control-Allow-Origin": "*",
                 }
             }
-            axios.post(tempApiBaseUrl + "/coasters/credits", payload, config)
+            axios.post(tempApiBaseUrl + '/bucketlist', payload, config)
                 .then(function (response) {
                     if (response.status === 200) {
                         setState(prevState => ({
@@ -55,6 +57,10 @@ function Credits() {
     return (
         <div className="card col-12 col-lg-4 addCoaster-card mt-2 hv-center">
             <h2>My Credits</h2>
+
+            <SearchBar />
+            <Carousel />
+
             <div>
                 <form>
                     <div className="form-group text-left">
