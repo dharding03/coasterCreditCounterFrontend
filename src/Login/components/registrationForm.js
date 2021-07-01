@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 import {API_BASE_URL, ACCESS_TOKEN_NAME} from './apiConstants'
+import Carousel from '../../slideshow/controls';
+import SearchBar from '../../SearchBar/components/searchBar';
 
 function RegistrationForm(props) {
     const [state , setState] = useState({
@@ -67,7 +69,7 @@ function RegistrationForm(props) {
     }
     const handleSubmitClick = (e) => {
         e.preventDefault();
-        if(state.password === state.confirmPassword) {
+        if(state.password.match(state.confirmPassword)) {
             const passwordRequirements = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
             const passwordIsValid = passwordRequirements.test(state.password)
             const emailRequirements = /(?:[a-z0-9!#$%&'*+\=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+\=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/
@@ -82,6 +84,13 @@ function RegistrationForm(props) {
     }
     return(
         <div className="card col-12 col-lg-4 login-card mt-2 hv-center">
+
+        
+            <SearchBar />
+            <Carousel />
+
+        
+
             <form>
                 <div className="form-group text-left">
                     <label htmlFor="firstName">First Name</label>
@@ -117,7 +126,7 @@ function RegistrationForm(props) {
                 />
                 <div className="form-group text-left">
                     <label htmlFor="username">Username</label>
-                    <input type="useranme"
+                    <input type="username"
                     className="form-control"
                     id="username"
                     placeholder="Enter username"
