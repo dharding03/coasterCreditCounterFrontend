@@ -33,7 +33,7 @@ function BucketList() {
                     "Access-Control-Allow-Origin": "*",
                 }
             }
-            axios.post(tempApiBaseUrl + '/coasters/bucketlist', payload, config)
+            axios.post(tempApiBaseUrl + "/coasters/bucketlist", payload, config)
                 .then(function (response) {
                     if (response.status === 200) {
                         setState(prevState => ({
