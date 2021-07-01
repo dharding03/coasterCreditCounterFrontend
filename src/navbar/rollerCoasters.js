@@ -24,13 +24,13 @@ function Credits() {
                 "coaster": state.coaster,
                 "park": state.park,
             }
-            const tempApiBaseUrl = "http://localhost:7080"
+            const ApiBaseUrl = "http://localhost:7080"
             let config = {
                 headers: {
                     "Access-Control-Allow-Origin": "*",
                 }
             }
-            axios.post(tempApiBaseUrl + '/bucketlist', payload, config)
+            axios.post(ApiBaseUrl + 'coasters/credits', payload, config)
                 .then(function (response) {
                     if (response.status === 200) {
                         setState(prevState => ({
