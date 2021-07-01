@@ -15,6 +15,13 @@ function Slideshow() {
             </Carousel.Item>
             <Carousel.Item>
                 <img
+                    className="bansheeLogo"
+                    src="./bansheeLogo.JPG"
+                    alt="logo"
+                />
+            </Carousel.Item>
+            <Carousel.Item>
+                <img
                     className="banshee"
                     src="./Banshee.JPG"
                     alt="logo"
@@ -101,6 +108,13 @@ function Slideshow() {
                 <img
                     className="wickedtwister"
                     src="./wickedtwister.JPG"
+                    alt="logo"
+                />
+            </Carousel.Item>
+            <Carousel.Item>
+                <img
+                    className="ironDragonTrains"
+                    src="./ironDragonTrains.JPG"
                     alt="logo"
                 />
             </Carousel.Item>
