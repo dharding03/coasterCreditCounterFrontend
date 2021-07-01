@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 import {API_BASE_URL, ACCESS_TOKEN_NAME} from './apiConstants';
+import Carousel from '../../slideshow/controls';
+import SearchBar from '../../SearchBar/components/searchBar';
 
 function LoginForm(props) {
     const [state, setState] = useState({
@@ -54,6 +56,11 @@ function LoginForm(props) {
     }
     return (
         <div className="card col-12 col-lg-4 login-card mt-2 hv-center">
+
+                <SearchBar />
+                <Carousel />
+
+
             <form>
                 <div className="form-group text-left">
                     <label htmlFor="exampleInputEmail">Email address</label>
