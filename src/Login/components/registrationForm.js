@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import axios from 'axios';
-import {API_BASE_URL, ACCESS_TOKEN_NAME} from './apiConstants'
+import {ACCESS_TOKEN_NAME} from './apiConstants'
 import Carousel from '../../slideshow/controls';
 import SearchBar from '../../SearchBar/components/searchBar';
 
