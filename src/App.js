@@ -3,12 +3,11 @@ import './App.css';
 import Home from './HomePage/Home';
 import RegistrationForm from './Login/components/registrationForm';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
-import SearchBar from './SearchBar/components/searchBar';
-import Carousel from './slideshow/controls.js';
 import NavBar from './navbar/navbar';
 import BucketList from './navbar/bucketlist';
 import LoginForm from './Login/components/loginForm';
 import Credits from './navbar/rollerCoasters';
+import myAccount from './AccountPage/myAccount';
 
 function App() {
   return (
@@ -27,6 +26,7 @@ function App() {
             <Route path="/register" component={RegistrationForm} />
             <Route path="/home" component={Home}/>
             <Route path="/rollercoasters" component={Credits}/>
+            <Route path="/myaccount" component={myAccount}/>
           </Switch>
         </Router>
       </div>

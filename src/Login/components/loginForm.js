@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import axios from 'axios';
-import {API_BASE_URL, ACCESS_TOKEN_NAME} from './apiConstants';
+import {ACCESS_TOKEN_NAME} from './apiConstants';
 import Carousel from '../../slideshow/controls';
 import SearchBar from '../../SearchBar/components/searchBar';
 
@@ -32,7 +32,7 @@ function LoginForm(props) {
             "email":state.email,
             "password":state.password
         }
-        axios.post(apiBaseUrl+'/users/login', payload)
+        axios.post(apiBaseUrl+'/users/login', payload, config)
         .then(function (response){
             if(response.status === 200){
                 setState(prevState => ({
