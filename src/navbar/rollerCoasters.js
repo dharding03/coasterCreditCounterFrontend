@@ -8,7 +8,7 @@ function Credits() {
     const [state, setState] = useState({
         coaster: "",
         park: "",
-        successMessage: null
+        successMessage: ""
     })
     const handleChange = (e) => {
         const { id, value } = e.target
