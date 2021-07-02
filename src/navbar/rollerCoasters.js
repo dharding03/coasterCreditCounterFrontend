@@ -30,7 +30,7 @@ function Credits() {
                     "Access-Control-Allow-Origin": "*",
                 }
             }
-            axios.post(ApiBaseUrl + 'coasters/credits', payload, config)
+            axios.post(ApiBaseUrl + '/coasters/credits', payload, config)
                 .then(function (response) {
                     if (response.status === 200) {
                         setState(prevState => ({
