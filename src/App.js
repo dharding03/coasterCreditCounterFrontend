@@ -12,7 +12,7 @@ import myAccount from './AccountPage/myAccount';
 function App() {
   return (
     <div className="App">
-      <NavBar className="nav"/>
+       <NavBar className="nav"/> 
 
       <div className="routes">
         <Router>
