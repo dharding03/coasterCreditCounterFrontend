@@ -9,11 +9,12 @@ import './Home.css';
 function Home() {
 
   return (
+    
 
     <div>
       <div id="background-video">
 
-        <video autoPlay muted loop id="myVideo">
+        <video autoPlay muted loop id="background-Video">
           <source src="furyVideo.mp4" type="video/mp4" />
         </video>
 
