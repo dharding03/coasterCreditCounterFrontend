@@ -17,7 +17,6 @@ function SearchBar() {
     }, []);
 
     function search(rows) {
-        const columns = rows[0] && Object.keys(rows[0])
         return rows.filter((row) =>
 
             row.name.toLowerCase().indexOf(q) > -1 ||
@@ -34,15 +33,9 @@ function SearchBar() {
             </div>
             <div>
                 <Datatable
-                    data={search(data)}
+                    data={(search(data))}
                 />
             </div>
-            {/* <input
-        key="random1"
-        value={keyword}
-        placeholder= {"search"}
-        onChange={(e) => setKeyword(e.target.value)}
-        /> */}
         </div>
     )
 }
