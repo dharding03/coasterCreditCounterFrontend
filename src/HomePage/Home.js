@@ -15,7 +15,7 @@ function Home() {
       <div id="background-video">
     
         <video autoPlay muted loop id="background-Video">
-          <source src="furyVideo.mp4" type="video/mp4" />
+          <source src="coastersVideo.mp4" type="video/mp4" />
         </video>
 
       </div>
