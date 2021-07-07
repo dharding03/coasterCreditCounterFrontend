@@ -12,7 +12,9 @@
     "body-parser": "^1.19.0",
     "bootstrap": "^4.6.0",
     "bootswatch": "^5.0.1",
+    "email-validator": "^2.0.4",
     "es6-promise": "^4.2.8",
+    "formik": "^2.2.9",
     "isomorphic": "0.0.11",
     "isomorphic-fetch": "^3.0.0",
     "jquery": "^3.6.0",
@@ -28,7 +30,8 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "react-swipe": "^6.0.4",
-    "web-vitals": "^1.1.2"
+    "web-vitals": "^1.1.2",
+    "yup": "^0.32.9"
   },
   "scripts": {
     "start": "react-scripts start",
