@@ -6,7 +6,7 @@ import SearchBar from '../../SearchBar/components/searchBar';
 
 function LoginForm(props) {
     const [state, setState] = useState({
-        email : "",
+        username : "",
         password : "", 
         successMessage: "",
         errorMessage: ""
@@ -30,7 +30,7 @@ function LoginForm(props) {
     const handleSubmitClick = (e) => {
         e.preventDefault();
         const payload={
-            email:state.email,
+            username:state.username,
             password:state.password
         }
         axios.post(apiBaseUrl+"/users/login", payload, config)
@@ -46,7 +46,7 @@ function LoginForm(props) {
                 
             }
             else{
-                state.errorMessage = "Email or password is invalid"
+                state.errorMessage = "Username or password is invalid"
             }
         })
         .catch(function(error){
@@ -70,9 +70,9 @@ function LoginForm(props) {
 
             <form>
                 <div className="form-group text-left">
-                    <label htmlFor="exampleInputEmail">Email address</label>
-                    <input type="email" className="form-control" id="email"
-                    aria-describedby="emailHelp" placeholder="Enter Email" value={state.email}
+                    <label htmlFor="exampleInputUsername">Username</label>
+                    <input type="username" className="form-control" id="username"
+                    aria-describedby="usernameHelp" placeholder="Enter Username" value={state.username}
                     onChange={handleChange} />
                 </div>
                 <div className="form-group text-left">
