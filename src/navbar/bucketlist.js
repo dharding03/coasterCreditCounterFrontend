@@ -3,7 +3,9 @@ import axios from 'axios';
 import { ACCESS_TOKEN_NAME } from '../Login/components/apiConstants';
 import Carousel from '../slideshow/controls';
 import SearchBar from '../SearchBar/components/searchBar';
+
 import DisplayBucketList from '../DisplayDBData/displayBucketList';
+
 
 function BucketList() {
     const [state, setState] = useState({
@@ -62,7 +64,9 @@ function BucketList() {
             <Carousel />
             
             <div>
+
                 <DisplayBucketList />
+
                 <form>
                     <div className="form-group text-left">
                         <label htmlFor="addcoaster" type="text">Add Coaster</label>

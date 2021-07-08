@@ -55,6 +55,7 @@ function LoginForm(props) {
         });
     }
 
+
     // useEffect (() => {
     //     const loggedInUser = localStorage.getItem("user");
     //     if (loggedInUser) {
@@ -75,6 +76,7 @@ function LoginForm(props) {
     }
     const redirectToRegister = () => {
         props.history.push("/register");
+
         
     }
     return (

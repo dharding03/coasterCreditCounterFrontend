@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './search.css';
 import Datatable from './dataTable';
 
+
 require("es6-promise").polyfill();
 require("isomorphic-fetch");
 
@@ -41,6 +42,7 @@ function SearchBar() {
             </div>
             {dataTable}
            
+
         </div>
     )
 }

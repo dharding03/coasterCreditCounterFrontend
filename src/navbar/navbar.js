@@ -1,3 +1,4 @@
+
 import React, {useState} from 'react';
 
 function NavBar() {
@@ -24,6 +25,7 @@ function NavBar() {
                 <button type="logout" onClick={handleLogout}>Logout</button>
             
                 </nav>
+
         </div>
     )
 }
