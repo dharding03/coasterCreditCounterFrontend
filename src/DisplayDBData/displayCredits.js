@@ -6,27 +6,36 @@ function DisplayCredits() {
     console.log(credits)
     useEffect(() => {
         fetch("http://localhost:7080/coasters/credits")
-        .then(response => response.json())
-        .then(json => setCredits(json));
+            .then(response => response.json())
+            .then(json => setCredits(json));
     }, []);
 
-    // function display(rows) {
-    //     return rows.filter((row) => 
-    //     row.coaster.toLowerCase().indexOf(credits) > -1 ||
-    //     row.park.toLowerCase().indexOf(credits) > -1
-    //     )
-    // }
+
 
     return (
         <div>
-            
-              {credits.map((coaster, id ) => 
-            <p key= {id}>
-                 
-               {coaster.coaster}
-               {coaster.park}   
-            </p>
-              )}  
+            <table cellPadding={0} cellSpacing={0}>
+                <thead>
+                    <tbody>
+                        {credits.map((coaster, id) =>
+                            
+                                <td key={id}>
+                                    <tr>
+                                    <h6>
+                                        Coaster: {coaster.coaster}
+                                    </h6>
+                                    </tr>
+                                    <tr>
+                                    <h6>
+                                        Park: {coaster.park}
+                                    </h6>
+                                    </tr>
+                                </td>
+                           
+                        )}
+                    </tbody>
+                </thead>
+            </table>
         </div>
     )
 
