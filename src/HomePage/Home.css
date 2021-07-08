@@ -1,3 +1,23 @@
+
+/* #MainBanner {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+} */
+
+#background-video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  opacity: 0.5%;
+}
+
+.content {
+  position: fixed;
+  bottom: 0;
+
 .video-wrapper {
   z-index: 2;
 }
@@ -15,11 +35,15 @@
   position: absolute;
   bottom: 0;
   left: 0;
+
   background: rgba(0, 0, 0, 0.5);
   color: #f1f1f1;
   width: 100%;
   padding: 20px;
+
+
   height: 100%;
+
 }
 #myBtn {
   width: 200px;

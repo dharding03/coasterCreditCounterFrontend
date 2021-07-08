@@ -1,17 +1,15 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import axios from 'axios';
 import { ACCESS_TOKEN_NAME } from '../Login/components/apiConstants';
 import Carousel from '../slideshow/controls';
 import SearchBar from '../SearchBar/components/searchBar';
+import DisplayCredits from '../DisplayDBData/displayCredits';
 
-import DisplayBucketList from '../DisplayDBData/displayBucketList';
-
-
-function BucketList() {
+function Credits() {
     const [state, setState] = useState({
         coaster: "",
         park: "",
-        successMessage: null
+        successMessage: ""
     })
     const handleChange = (e) => {
         const { id, value } = e.target
@@ -27,18 +25,18 @@ function BucketList() {
                 "coaster": state.coaster,
                 "park": state.park,
             }
-            const tempApiBaseUrl = "http://localhost:7080"
+            const ApiBaseUrl = "http://localhost:7080"
             let config = {
                 headers: {
                     "Access-Control-Allow-Origin": "*",
                 }
             }
-            axios.post(tempApiBaseUrl + '/coasters/bucketlist', payload, config)
+            axios.post(ApiBaseUrl + "/coasters/credits", payload, config)
                 .then(function (response) {
                     if (response.status === 200) {
                         setState(prevState => ({
                             ...prevState,
-                            'successMessage': 'Coaster successfully added!'
+                            "successMessage": "Coaster successfully added!"
                         }))
                         localStorage.setItem(ACCESS_TOKEN_NAME, response.data.token);
                     } else {
@@ -59,14 +57,13 @@ function BucketList() {
 
     return (
         <div className="card col-12 col-lg-4 addCoaster-card mt-2 hv-center">
+            <h2>My Credits</h2>
+
             <SearchBar />
-            <h2>My Bucket List</h2>
             <Carousel />
             
             <div>
-
-                <DisplayBucketList />
-
+            <DisplayCredits />
                 <form>
                     <div className="form-group text-left">
                         <label htmlFor="addcoaster" type="text">Add Coaster</label>
@@ -96,10 +93,11 @@ function BucketList() {
                     </div>
 
                 </form>
+                
             </div>
         </div>
     )
-
 }
 
-export default BucketList;
+
+export default Credits;

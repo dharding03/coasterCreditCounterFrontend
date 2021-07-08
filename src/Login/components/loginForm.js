@@ -1,10 +1,11 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import {ACCESS_TOKEN_NAME} from './apiConstants';
 import Carousel from '../../slideshow/controls';
 import SearchBar from '../../SearchBar/components/searchBar';
 
 function LoginForm(props) {
+    const [user, setUser] = useState()
     const [state, setState] = useState({
         username : "",
         password : "", 
@@ -53,12 +54,29 @@ function LoginForm(props) {
             console.log(error);
         });
     }
+
+
+    // useEffect (() => {
+    //     const loggedInUser = localStorage.getItem("user");
+    //     if (loggedInUser) {
+    //         const foundUser = JSON.parse(loggedInUser);
+    //         setUser(foundUser);
+    //     }
+    // }, [])
+
+    // React.useEffect (() => {
+    //     localStorage.setItem("user", JSON.stringify(user));
+    // })
+
+
+
     const redirectToMyAccount = () => {
         
-        props.history.push('/myaccount');
+        props.history.push("/myaccount");
     }
     const redirectToRegister = () => {
-        props.history.push('/register');
+        props.history.push("/register");
+
         
     }
     return (
