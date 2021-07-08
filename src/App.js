@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 import NavBar from './navbar/navbar';
 import BucketList from './navbar/bucketlist';
 import LoginForm from './Login/components/loginForm';
-import Credits from './navbar/rollerCoasters';
+import Credits from './navbar/credits';
 import myAccount from './AccountPage/myAccount';
 
 function App() {
@@ -25,7 +25,7 @@ function App() {
             <Route path="/login" component={LoginForm} />
             <Route path="/register" component={RegistrationForm} />
             <Route path="/home" component={Home}/>
-            <Route path="/rollercoasters" component={Credits}/>
+            <Route path="/mycredits" component={Credits}/>
             <Route path="/myaccount" component={myAccount}/>
           </Switch>
         </Router>

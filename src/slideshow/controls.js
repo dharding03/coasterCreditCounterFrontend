@@ -9,112 +9,112 @@ function Slideshow() {
             <Carousel.Item>
                 <img
                     className="diamondback"
-                    src="./Diamondback.JPG"
+                    src="https://i.imgur.com/xH27TgK.jpg"
                     alt="logo"
                 />
             </Carousel.Item>
             <Carousel.Item>
                 <img
                     className="bansheeLogo"
-                    src="./bansheeLogo.JPG"
+                    src="https://i.imgur.com/UTHbCky.jpg"
                     alt="logo"
                 />
             </Carousel.Item>
             <Carousel.Item>
                 <img
                     className="banshee"
-                    src="./Banshee.JPG"
+                    src="https://i.imgur.com/t83bDRw.jpg?1"
                     alt="logo"
                 />
             </Carousel.Item>
             <Carousel.Item>
                 <img
                     className="orion"
-                    src="./Orion.JPG"
+                    src="https://i.imgur.com/5s2cZLg.jpg"
                     alt="logo"
                 />
             </Carousel.Item>
             <Carousel.Item>
                 <img
                     className="copperheadStrikeLogo"
-                    src="./copperheadLogo.JPG"
+                    src="https://i.imgur.com/ZpGHGam.jpg"
                     alt="logo"
                 />
             </Carousel.Item>
             <Carousel.Item>
                 <img
                     className="furyLift"
-                    src="./furyLift.JPG"
+                    src="https://i.imgur.com/Z4cANXR.jpg"
                     alt="logo"
                 />
             </Carousel.Item>
             <Carousel.Item>
                 <img
                     className="furyLogo"
-                    src="./furyLogo.JPG"
+                    src="https://i.imgur.com/fXaPJGw.jpg"
                     alt="logo"
                 />
             </Carousel.Item>
             <Carousel.Item>
                 <img
                     className="gatekeeperLogo"
-                    src="./gatekeeperLogo.JPG"
+                    src="https://i.imgur.com/Clyvuzj.jpg"
                     alt="logo"
                 />
             </Carousel.Item>
             <Carousel.Item>
                 <img
                     className="millenniumforce"
-                    src="./millenniumForce.JPG"
+                    src="https://i.imgur.com/LWgpdue.jpg"
                     alt="logo"
                 />
             </Carousel.Item>
             <Carousel.Item>
                 <img
                     className="nighthawkLoop"
-                    src="./nighthawkLoop.JPG"
+                    src="https://i.imgur.com/gIz7nXn.jpg"
                     alt="logo"
                 />
             </Carousel.Item>
             <Carousel.Item>
                 <img
                     className="raptor"
-                    src="./raptor.JPG"
+                    src="https://i.imgur.com/ykGUdHo.jpg"
                     alt="logo"
                 />
             </Carousel.Item>
             <Carousel.Item>
                 <img
                     className="steelVengeance"
-                    src="./steelVengeance.JPG"
+                    src="https://i.imgur.com/HRZzCG6.jpg"
                     alt="logo"
                 />
             </Carousel.Item>
             <Carousel.Item>
                 <img
                     className="steelVengeanceLogo"
-                    src="./steelVengeanceLogo.JPG"
+                    src="https://i.imgur.com/vqVdpoR.jpg"
                     alt="logo"
                 />
             </Carousel.Item>
             <Carousel.Item>
                 <img
                     className="valravnLogo"
-                    src="./valravnLogo.JPG"
+                    src="https://i.imgur.com/ja0eOS8.jpg"
                     alt="logo"
                 />
             </Carousel.Item>
             <Carousel.Item>
                 <img
                     className="wickedtwister"
-                    src="./wickedtwister.JPG"
+                    src="https://i.imgur.com/K149SVe.jpg"
                     alt="logo"
                 />
             </Carousel.Item>
             <Carousel.Item>
                 <img
                     className="ironDragonTrains"
-                    src="./ironDragonTrains.JPG"
+                    src="https://i.imgur.com/atBbZG5.jpg"
                     alt="logo"
                 />
             </Carousel.Item>

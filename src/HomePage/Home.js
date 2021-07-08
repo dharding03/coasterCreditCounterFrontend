@@ -12,13 +12,13 @@ function Home() {
     
 
     <div>
-      <div id="background-video">
+     
     
         <video autoPlay muted loop id="background-Video">
-          <source src="coastersVideo.mp4" type="video/mp4" />
+          <source src="furyVideo.mp4" type="video/mp4" />
         </video>
 
-      </div>
+      
 
       <div class="content">
         <h1>Welcome to Coaster Credit Counter</h1>
