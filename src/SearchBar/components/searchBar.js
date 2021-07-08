@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './search.css';
 import Datatable from './dataTable';
 
+
 require("es6-promise").polyfill();
 require("isomorphic-fetch");
 
@@ -25,17 +26,23 @@ function SearchBar() {
             row.model.toLowerCase().indexOf(q) > -1
         );
     }
-
+    let dataTable = "";
+    if (q) {
+        dataTable =  
+        <div>
+        <Datatable
+            data={(search(data))}
+        />
+    </div>
+    }
     return (
         <div>
-            <div>
+            <div class= "form-center my-2 my-lg-0">
                 <input type="text" placeholder="search" value={q} onChange={(e) => setQ(e.target.value)} />
             </div>
-            <div>
-                <Datatable
-                    data={(search(data))}
-                />
-            </div>
+            {dataTable}
+           
+
         </div>
     )
 }
