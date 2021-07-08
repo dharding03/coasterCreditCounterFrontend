@@ -9,9 +9,7 @@ function NavBar() {
                 <a class="navbar-brand" href={"/login"}>Login</a>
                 <a href={"/bucketlist"} class="nav-link">Bucket List</a>
                 <a href={"/rollercoasters"} class="nav-link">Roller Coasters</a>
-                <a href={"/myaccount"} class="nav-link">My Account</a>
-            
-         
+                <a href={"/myaccount"} class="nav-link">My Account</a>       
         </div>
     )
 }
