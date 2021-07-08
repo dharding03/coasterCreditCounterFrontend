@@ -11,7 +11,7 @@ function BucketList() {
     const [state, setState] = useState({
         coaster: "",
         park: "",
-        successMessage: null
+        successMessage: ""
     })
     const handleChange = (e) => {
         const { id, value } = e.target
@@ -27,13 +27,13 @@ function BucketList() {
                 "coaster": state.coaster,
                 "park": state.park,
             }
-            const tempApiBaseUrl = "http://localhost:7080"
+            const apiBaseUrl = "http://localhost:7080"
             let config = {
                 headers: {
                     "Access-Control-Allow-Origin": "*",
                 }
             }
-            axios.post(tempApiBaseUrl + '/coasters/bucketlist', payload, config)
+            axios.post(apiBaseUrl + '/coasters/bucketlist', payload, config)
                 .then(function (response) {
                     if (response.status === 200) {
                         setState(prevState => ({
