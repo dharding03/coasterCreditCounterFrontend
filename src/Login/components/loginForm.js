@@ -55,13 +55,17 @@ function LoginForm(props) {
         });
     }
 
-    useEffect (() => {
-        const loggedInUser = localStorage.getItem("user");
-        if (loggedInUser) {
-            const foundUser = JSON.parse(loggedInUser);
-            setUser(foundUser);
-        }
-    }, [])
+    // useEffect (() => {
+    //     const loggedInUser = localStorage.getItem("user");
+    //     if (loggedInUser) {
+    //         const foundUser = JSON.parse(loggedInUser);
+    //         setUser(foundUser);
+    //     }
+    // }, [])
+
+    // React.useEffect (() => {
+    //     localStorage.setItem("user", JSON.stringify(user));
+    // })
 
 
 
