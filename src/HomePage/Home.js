@@ -8,11 +8,7 @@ import './Home.css';
 </script>
 
 // import LoginForm from './Login/components/loginForm';
-<>
-  function myFunction() {
-    document.body.style.backgroundColor = "lightblue"
-  }
-</>
+
 
 
 function Home() {
@@ -65,6 +61,7 @@ function Home() {
 
       </div>
 
+    </div>
     </div>
   );
 
