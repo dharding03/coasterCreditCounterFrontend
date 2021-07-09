@@ -1,5 +1,6 @@
 import React from 'react';
 import './Home.css';
+import LoginForm from '../Login/components/loginForm';
 <script>
   function myFunction() {
     document.body.style.backgroundColor = "lightblue"
@@ -11,21 +12,18 @@ function Home() {
   return (
 
 
-    <div className="myVideo">
+    <div>
 
-      <iframe src="https://player.vimeo.com/video/572707120?autoplay=1&loop=1"
-        width="640"
-        height="360"
-        frameborder="0"
-        allow="autoplay; fullscreen; picture-in-picture"
-        allowfullscreen></iframe>
+    <video autoPlay mute loop>
+      <source src="MyMovie.mp4" type="video/mp4" />
+    </video>
 
 
 
       <div class="content">
         <h1>Welcome to Coaster Credit Counter</h1>
-        <p>Log in to Search and Build a Bucket List of Your Favorite Roller Coasters</p>
-
+        <p>Log in to build a your credits list and Bucket List of coasters you want to ride.</p>
+        
         <button id="myBtn" onclick="myFunction()">Pause</button>
       </div>
 
