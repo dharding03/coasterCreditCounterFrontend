@@ -5,7 +5,8 @@ import Carousel from '../../slideshow/controls';
 import SearchBar from '../../SearchBar/components/searchBar';
 
 function LoginForm(props) {
-    const [user, setUser] = useState()
+    const [user, setUser] = useState({})
+    const [loggedInUser, foundUser] = useState()
     const [state, setState] = useState({
         username : "",
         password : "", 
@@ -56,17 +57,18 @@ function LoginForm(props) {
     }
 
 
-    // useEffect (() => {
-    //     const loggedInUser = localStorage.getItem("user");
-    //     if (loggedInUser) {
-    //         const foundUser = JSON.parse(loggedInUser);
-    //         setUser(foundUser);
-    //     }
-    // }, [])
+    useEffect (() => {
+        const loggedInUser = localStorage.getItem("user");
+        console.log(loggedInUser)
+        if (loggedInUser) {
+            const foundUser = JSON.parse(loggedInUser);
+            setUser(foundUser);
+        }
+    }, [])
 
-    // React.useEffect (() => {
-    //     localStorage.setItem("user", JSON.stringify(user));
-    // })
+    useEffect (() => {
+        localStorage.setItem("user", JSON.stringify(user));
+    })
 
 
 
