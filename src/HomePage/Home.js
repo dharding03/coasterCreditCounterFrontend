@@ -22,7 +22,7 @@ function Home() {
 
       <div class="content">
         <h1>Welcome to Coaster Credit Counter</h1>
-        <p>Log in to build a your credits list and Bucket List of coasters you want to ride.</p>
+        <p>Log in to build your credits list and Bucket List of coasters you want to ride.</p>
         
         <button id="myBtn" onclick="myFunction()">Pause</button>
       </div>
