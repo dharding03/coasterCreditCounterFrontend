@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { ACCESS_TOKEN_NAME } from '../Login/components/apiConstants';
 import Carousel from '../slideshow/controls';
@@ -8,6 +8,13 @@ import DisplayBucketList from '../DisplayDBData/displayBucketList';
 
 
 function BucketList() {
+    const [bucketList, setBucketList] = useState([])
+    useEffect(() => {
+        fetch("http://localhost:7080/coasters/bucketlist")
+        .then(response => response.json())
+        .then(json => setBucketList(json));
+    }, []);
+
     const [state, setState] = useState({
         coaster: "",
         park: "",
@@ -41,6 +48,10 @@ function BucketList() {
                             'successMessage': 'Coaster successfully added!'
                         }))
                         localStorage.setItem(ACCESS_TOKEN_NAME, response.data.token);
+                        
+                        // bucketList.push(response.data)
+                        // if the post request is successful
+                             // update the bucketlist inside the displayBucketList 
                     } else {
                         // props.showError("some error ocurred")
                     }
