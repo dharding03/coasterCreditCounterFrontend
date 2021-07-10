@@ -1,16 +1,17 @@
 import React from 'react';
 import './App.css';
-import Home from './HomePage/Home';
-import RegistrationForm from './Login/components/registrationForm';
+import Home from './Components/HomePage/Home';
+import RegistrationForm from './Components/Login/components/registrationForm';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
-import NavBar from './navbar/navbar';
-import BucketList from './navbar/bucketlist';
-import LoginForm from './Login/components/loginForm';
+import NavBar from './Components/navbar/navbar';
+import BucketList from './Components/navbar/bucketlist';
+import LoginForm from './Components/Login/components/loginForm';
+import MyAccount from './Components/AccountPage/myAccount';
 
-import Credits from './navbar/credits';
+import Credits from './Components/navbar/credits';
 
 
-import myAccount from './AccountPage/myAccount';
+
 
 function App() {
   return (
@@ -33,7 +34,7 @@ function App() {
 
             
 
-            <Route path="/myaccount" component={myAccount}/>
+            <Route path="/myaccount" component={MyAccount}/>
           </Switch>
         </Router>
       </div>
