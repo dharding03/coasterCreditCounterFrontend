@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Carousel from '../Slideshow/Controls';
-import SearchBar from '../SearchBar/components/searchBar';
+import Carousel from '../Slideshow/Controls.js';
+
 
 
 
@@ -29,7 +29,7 @@ function MyAccount()  {
 
     return(
         <div>
-            <SearchBar />
+            
 
             <h2>
                 My Account

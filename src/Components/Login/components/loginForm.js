@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import {ACCESS_TOKEN_NAME} from './apiConstants';
 import Carousel from '../../Slideshow/Controls';
-import SearchBar from '../../SearchBar/components/searchBar';
 
 function LoginForm(props) {
     const [user, setUser] = useState({})
@@ -84,7 +83,7 @@ function LoginForm(props) {
     return (
         <div className="card col-12 col-lg-4 login-card mt-2 hv-center">
 
-                <SearchBar />
+                
                 <Carousel />
 
 

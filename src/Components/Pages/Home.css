@@ -30,6 +30,11 @@ video {
   
 }
 
+Link {
+  background: rgba(0, 0, 0, 0.5);
+  color:#f1f1f1;
+}
+
 .content {
   position: absolute;
   bottom: 0;

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { ACCESS_TOKEN_NAME } from '../Login/Components/apiConstants';
 import Carousel from '../Slideshow/Controls';
-import SearchBar from '../SearchBar/components/searchBar';
 import './Credits.css';
 function Credits() {
     const [credits, setCredits] = useState([])
@@ -79,7 +78,7 @@ function Credits() {
         <div className="card col-12 col-lg-4 addCoaster-card mt-2 hv-center">
             <h2>My Credits</h2>
 
-            <SearchBar />
+           
             <Carousel />
 
             <div>

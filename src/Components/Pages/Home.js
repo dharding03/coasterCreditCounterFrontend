@@ -1,5 +1,6 @@
 import React from 'react';
 import './Home.css';
+import {Link} from 'react-router-dom';
 
 <script>
   function myFunction() {
@@ -22,7 +23,9 @@ function  Home() {
       <div class="content">
         <h1>Welcome to Coaster Credit Counter</h1>
         <p>Join your fellow coaster enthusiasts and keep track of your credits and bucket list.</p>
-        <button id="myBtn" onclick="myFunction()">Pause</button>
+        <Link to="/login">
+          <button type="button" className="loginButton">Click here to log in</button>
+        </Link>
       </div>
       <div className="home">
       </div>
