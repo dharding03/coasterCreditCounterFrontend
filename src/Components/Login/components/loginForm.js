@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import {ACCESS_TOKEN_NAME} from './apiConstants';
-import Carousel from '../../slideshow/controls';
+import Carousel from '../../Slideshow/Controls';
 import SearchBar from '../../SearchBar/components/searchBar';
 
 function LoginForm(props) {

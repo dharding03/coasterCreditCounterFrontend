@@ -1,23 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { ACCESS_TOKEN_NAME } from '../Login/components/apiConstants';
-import Carousel from '../slideshow/controls';
-import SearchBar from '../SearchBar/components/searchBar';
+import { ACCESS_TOKEN_NAME } from '../Login/Components/apiConstants';
 
-import DisplayBucketList from '../DisplayDBData/displayBucketList';
+import Carousel from '../Slideshow/Controls';
+
+import './bucketList.css';
+
 
 
 function BucketList() {
+
     const [bucketList, setBucketList] = useState([])
     useEffect(() => {
         fetch("http://localhost:7080/coasters/bucketlist")
-        .then(response => response.json())
-        .then(json => setBucketList(json));
+            .then(response => response.json())
+            .then(json => {
+                setBucketList(json)
+                setState(prevState => ({
+                    ...prevState,
+                    bucketList: json
+                }))
+            });
     }, []);
 
     const [state, setState] = useState({
         coaster: "",
         park: "",
+        bucketList: bucketList,
         successMessage: ""
     })
     const handleChange = (e) => {
@@ -28,7 +37,7 @@ function BucketList() {
         }))
     }
 
-    const sendDetailsToServer = () => {
+    const storeBucketListItem = () => {
         if (state.coaster.length && state.park.length) {
             const payload = {
                 "coaster": state.coaster,
@@ -40,18 +49,17 @@ function BucketList() {
                     "Access-Control-Allow-Origin": "*",
                 }
             }
-            axios.post(apiBaseUrl + '/coasters/bucketlist', payload, config)
+            axios.post(apiBaseUrl + "/coasters/bucketlist", payload, config)
                 .then(function (response) {
                     if (response.status === 200) {
                         setState(prevState => ({
                             ...prevState,
+                            bucketList: [...prevState.bucketList, JSON.parse(response.config.data)],
                             'successMessage': 'Coaster successfully added!'
                         }))
                         localStorage.setItem(ACCESS_TOKEN_NAME, response.data.token);
-                        
-                        // bucketList.push(response.data)
-                        // if the post request is successful
-                             // update the bucketlist inside the displayBucketList 
+
+
                     } else {
                         // props.showError("some error ocurred")
                     }
@@ -65,18 +73,42 @@ function BucketList() {
     }
     const handleSubmitClick = (e) => {
         e.preventDefault();
-        sendDetailsToServer();
+        storeBucketListItem();
+        setState(prevState => ({
+            ...prevState,
+            coaster: "",
+            park: ""
+        }))
     }
 
     return (
         <div className="card col-12 col-lg-4 addCoaster-card mt-2 hv-center">
-            <SearchBar />
+
             <h2>My Bucket List</h2>
             <Carousel />
-            
+
+
             <div>
 
-                <DisplayBucketList />
+                <div>
+                    <table cellPadding={0} cellSpacing={0}>
+                        <thead>
+                            <tbody>
+                                {state.bucketList.map((coaster, id) =>
+                                    <td key={id}>
+                                        <tr>
+                                            Coaster: {coaster.coaster}
+                                        </tr>
+                                        <tr>
+                                            Park: {coaster.park}
+                                        </tr>
+                                    </td>
+                                    
+                                )}
+                            </tbody>
+                        </thead>
+                    </table>
+                </div>
 
                 <form>
                     <div className="form-group text-left">
@@ -112,5 +144,6 @@ function BucketList() {
     )
 
 }
+
 
 export default BucketList;

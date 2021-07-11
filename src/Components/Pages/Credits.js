@@ -1,14 +1,27 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { ACCESS_TOKEN_NAME } from '../Login/components/apiConstants';
-import Carousel from '../slideshow/controls';
+import { ACCESS_TOKEN_NAME } from '../Login/Components/apiConstants';
+import Carousel from '../Slideshow/Controls';
 import SearchBar from '../SearchBar/components/searchBar';
-import DisplayCredits from '../DisplayDBData/displayCredits';
-
+import './Credits.css';
 function Credits() {
+    const [credits, setCredits] = useState([])
+
+    useEffect(() => {
+        fetch("http://localhost:7080/coasters/credits")
+            .then(response => response.json())
+            .then(json => {
+                setCredits(json)
+                setState(prevState => ({
+                    ...prevState,
+                    credits: json
+                }))
+            });
+    }, []);
     const [state, setState] = useState({
         coaster: "",
         park: "",
+        credits: credits,
         successMessage: ""
     })
     const handleChange = (e) => {
@@ -19,7 +32,7 @@ function Credits() {
         }))
     }
 
-    const sendDetailsToServer = () => {
+    const storeCreditsItem = () => {
         if (state.coaster.length && state.park.length) {
             const payload = {
                 "coaster": state.coaster,
@@ -36,8 +49,10 @@ function Credits() {
                     if (response.status === 200) {
                         setState(prevState => ({
                             ...prevState,
+                            credits: [...prevState.credits, JSON.parse(response.config.data)],
                             "successMessage": "Coaster successfully added!"
                         }))
+                        credits.push(JSON.parse(response.config.data))
                         localStorage.setItem(ACCESS_TOKEN_NAME, response.data.token);
                     } else {
                         // props.showError("some error ocurred")
@@ -52,7 +67,12 @@ function Credits() {
     }
     const handleSubmitClick = (e) => {
         e.preventDefault();
-        sendDetailsToServer();
+        storeCreditsItem();
+        setState(prevState => ({
+            ...prevState,
+            coaster: "",
+            park: ""
+        }))
     }
 
     return (
@@ -61,9 +81,26 @@ function Credits() {
 
             <SearchBar />
             <Carousel />
-            
+
             <div>
-            <DisplayCredits />
+                <div>
+                    <table cellPadding={0} cellSpacing={0}>
+                        <thead>
+                            <tbody>
+                                {state.credits.map((coaster, id) =>
+                                    <td key={id}>
+                                        <tr>
+                                            Coaster: {coaster.coaster}
+                                        </tr>
+                                        <tr>
+                                            Park: {coaster.park}
+                                        </tr>
+                                    </td>
+                                )}
+                            </tbody>
+                        </thead>
+                    </table>
+                </div>
                 <form>
                     <div className="form-group text-left">
                         <label htmlFor="addcoaster" type="text">Add Coaster</label>
@@ -93,7 +130,7 @@ function Credits() {
                     </div>
 
                 </form>
-                
+
             </div>
         </div>
     )
