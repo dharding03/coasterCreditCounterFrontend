@@ -1,36 +1,31 @@
 import React from 'react';
 import './Home.css';
-import LoginForm from '../Login/components/loginForm';
+
 <script>
   function myFunction() {
     document.body.style.backgroundColor = "lightblue"
   }
 </script>
 
-function Home() {
+function  Home() {
 
   return (
-
-
     <div>
-
-    <video autoPlay mute loop>
-      <source src="MyMovie.mp4" type="video/mp4" />
-    </video>
-
-
+      
+      <iframe src="https://player.vimeo.com/video/572707120?autoplay=1&loop=1" 
+      width="1980" 
+      height="900" 
+      frameborder="0" 
+      allow="autoplay; fullscreen; picture-in-picture" 
+      allowfullscreen></iframe>
 
       <div class="content">
         <h1>Welcome to Coaster Credit Counter</h1>
-        <p>Log in to build your credits list and Bucket List of coasters you want to ride.</p>
-        
+        <p>Join your fellow coaster enthusiasts and keep track of your credits and bucket list.</p>
         <button id="myBtn" onclick="myFunction()">Pause</button>
       </div>
-
       <div className="home">
-
       </div>
-
     </div>
   );
 

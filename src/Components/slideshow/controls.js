@@ -1,11 +1,11 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel'
 
-import "./controls.css";
+import "./Controls.css";
 
 function Slideshow() {
     return (
-        <Carousel>
+        <Carousel className="images">
             <Carousel.Item>
                 <img
                     className="diamondback"

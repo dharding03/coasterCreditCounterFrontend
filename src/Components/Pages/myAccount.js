@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import Carousel from '../slideshow/controls';
+import Carousel from '../Slideshow/Controls';
 import SearchBar from '../SearchBar/components/searchBar';
 
-function MyAccount() {
 
-    const [user, setUser] = useState([])
-    console.log(user)
-    useEffect(() => {
-        fetch("http://localhost:7080/users")
-            .then(response => response.json())
-            .then(json => setUser(json));
-    }, []);
+
+function MyAccount()  {
+
+
+    // const [user, setUser] = useState([])
+    // console.log(user)
+    // useEffect(() => {
+    //     fetch("http://localhost:7080/users")
+    //         .then(response => response.json())
+    //         .then(json => setUser(json));
+    // }, []);
 
 
 
@@ -27,10 +30,9 @@ function MyAccount() {
     return(
         <div>
             <SearchBar />
-            {/* once your state has data you can refference it here, inside of the the h2 tags */}
+
             <h2>
-            Hello {user.firstName}
-            
+                My Account
             </h2>
             <Carousel />
 
