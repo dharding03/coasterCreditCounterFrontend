@@ -54,14 +54,12 @@ function Credits() {
                         credits.push(JSON.parse(response.config.data))
                         localStorage.setItem(ACCESS_TOKEN_NAME, response.data.token);
                     } else {
-                        // props.showError("some error ocurred")
                     }
                 })
                 .catch(function (error) {
                     console.log(error);
                 });
         } else {
-            // props.showError('Something went wrong')
         }
     }
     const handleSubmitClick = (e) => {

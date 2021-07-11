@@ -61,14 +61,12 @@ function BucketList() {
 
 
                     } else {
-                        // props.showError("some error ocurred")
                     }
                 })
                 .catch(function (error) {
                     console.log(error);
                 });
         } else {
-            // props.showError('Something went wrong')
         }
     }
     const handleSubmitClick = (e) => {

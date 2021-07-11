@@ -24,7 +24,6 @@ function RegistrationForm(props) {
     }
     const sendDetailsToServer = () => {
         if (state.email.length && state.password.length) {
-            // props.showError(null);
 
 
 
@@ -53,7 +52,6 @@ function RegistrationForm(props) {
                         }))
                         localStorage.setItem(ACCESS_TOKEN_NAME, response.data.token);
                         redirectToHome();
-                        // props.showError(null)
                     } else {
                        state.errorMessage = "Something went wrong. Please try again"
                     }
@@ -67,11 +65,9 @@ function RegistrationForm(props) {
 
     }
     const redirectToHome = () => {
-        // props.updateTitle('Home')
         props.history.push("/home");
     }
     const redirectToLogin = () => {
-        // props.updateTitle('Login')
         props.history.push("/login");
     }
     const handleSubmitClick = (e) => {
