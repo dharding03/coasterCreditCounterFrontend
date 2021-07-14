@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Carousel from '../Slideshow/Controls.js';
-
+import Carousel from '../Slideshow/Controls';
 
 
 

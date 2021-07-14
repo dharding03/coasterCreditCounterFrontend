@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { ACCESS_TOKEN_NAME } from '../Login/Components/apiConstants';
+import {ACCESS_TOKEN_NAME} from "../Login/components/apiConstants";
 import Carousel from '../Slideshow/Controls';
 import './Credits.css';
 function Credits() {
