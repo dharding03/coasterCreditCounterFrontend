@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
 import Home from './Components/Pages/Home';
-import RegistrationForm from './Components/Login/Components/registrationForm';
+import RegistrationForm from "./Components/Login/components/registrationForm";
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import NavBar from './Components/NavBar/navbar';
 import BucketList from './Components/Pages/bucketList';
-import LoginForm from './Components/Login/Components/loginForm';
+import LoginForm from "./Components/Login/components/loginForm";
 import MyAccount from './Components/Pages/myAccount';
 import Credits from './Components/Pages/Credits';
 
@@ -32,7 +32,7 @@ function App() {
           </Router>
         </div>
       </div>
-    );
+    )
   }
 
 export default App;

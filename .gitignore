@@ -4,6 +4,8 @@
 /node_modules
 /.pnp
 .pnp.js
+/bootstrap-5.0.1-dist
+/.idea
 
 # testing
 /coverage
