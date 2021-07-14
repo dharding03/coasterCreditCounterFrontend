@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import {ACCESS_TOKEN_NAME} from "../Login/components/apiConstants";
 import Carousel from '../Slideshow/Controls';
 import './Credits.css';
+
+
 function Credits() {
     const [credits, setCredits] = useState([])
 
@@ -24,7 +26,7 @@ function Credits() {
         successMessage: ""
     })
     const handleChange = (e) => {
-        const { id, value } = e.target
+        const {id, value} = e.target
         setState(prevState => ({
             ...prevState,
             [id]: value
@@ -76,26 +78,27 @@ function Credits() {
         <div className="card col-12 col-lg-4 addCoaster-card mt-2 hv-center">
             <h2>My Credits</h2>
 
-           
-            <Carousel />
+
+            <Carousel/>
 
             <div>
                 <div>
                     <table cellPadding={0} cellSpacing={0}>
-                        <thead>
-                            <tbody>
-                                {state.credits.map((coaster, id) =>
-                                    <td key={id}>
-                                        <tr>
-                                            Coaster: {coaster.coaster}
-                                        </tr>
-                                        <tr>
-                                            Park: {coaster.park}
-                                        </tr>
-                                    </td>
-                                )}
-                            </tbody>
-                        </thead>
+                        <tr>
+                        <th>Coaster</th>
+                        <th>Park</th>
+                        </tr>
+
+                        {state.credits.map((coaster, id) =>
+                            <td key={id}>
+                                <tr>
+                                    {coaster.coaster}
+                                </tr>
+                                <tr>
+                                    {coaster.park}
+                                </tr>
+                        </td>
+                        )}
                     </table>
                 </div>
                 <form>
@@ -107,21 +110,21 @@ function Credits() {
                             id="coaster"
                             placeholder="Add Coaster"
                             value={state.coaster}
-                            onChange={handleChange} />
+                            onChange={handleChange}/>
                     </div>
                     <div className="form-group text-left">
                         <label htmlFor="addpark" type="text">Add Park</label>
                         <input type="addPark"
-                            className="form-control"
-                            id="park"
-                            placeholder="Add Park"
-                            value={state.park}
-                            onChange={handleChange} />
+                               className="form-control"
+                               id="park"
+                               placeholder="Add Park"
+                               value={state.park}
+                               onChange={handleChange}/>
                     </div>
                     <div>
                         <button type="submit"
-                            className="btn btn-primary"
-                            onClick={handleSubmitClick}
+                                className="btn btn-primary"
+                                onClick={handleSubmitClick}
                         >Add
                         </button>
                     </div>
