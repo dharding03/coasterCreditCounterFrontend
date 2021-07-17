@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import {useTable} from 'react-table';
 import axios from 'axios';
 import {ACCESS_TOKEN_NAME} from "../Login/components/apiConstants";
 import Carousel from '../Slideshow/Controls';
@@ -7,7 +8,7 @@ import './bucketList.css';
 
 
 
-function BucketList() {
+function BucketList(factory, deps) {
 
     const [bucketList, setBucketList] = useState([])
     useEffect(() => {
@@ -78,6 +79,8 @@ function BucketList() {
         }))
     }
 
+
+
     return (
         <div className="card col-12 col-lg-4 addCoaster-card mt-2 hv-center">
 
@@ -90,20 +93,22 @@ function BucketList() {
                 <div>
                     <table cellPadding={0} cellSpacing={0}>
                         <thead>
+
+                        </thead>
                             <tbody>
                                 {state.bucketList.map((coaster, id) =>
                                     <td key={id}>
                                         <tr>
-                                            Coaster: {coaster.coaster}
+                                            {coaster.coaster}
+
                                         </tr>
                                         <tr>
-                                            Park: {coaster.park}
+                                            {coaster.park}
                                         </tr>
                                     </td>
-                                    
+
                                 )}
                             </tbody>
-                        </thead>
                     </table>
                 </div>
 

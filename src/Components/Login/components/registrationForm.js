@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React, {Component, useState} from 'react';
 import axios from 'axios';
 import { ACCESS_TOKEN_NAME } from './apiConstants'
 import Carousel from '../../Slideshow/Controls';
+import {FieldArray} from "formik";
+import {FormInput} from "semantic-ui-react";
 
 
 function RegistrationForm(props) {
+
+
     const [state, setState] = useState({
         firstName: "",
         lastName: "",
@@ -82,7 +86,7 @@ function RegistrationForm(props) {
             }
             else {
                 state.errorMessage = "Please enter a valid email and password"
-                
+
             }
         } else {
             state.errorMessage = "Email or password is invaild"
@@ -93,7 +97,7 @@ function RegistrationForm(props) {
         <div className="card col-12 col-lg-4 login-card mt-2 hv-center">
 
 
-         
+
             <Carousel />
 
             <form>

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {Component, useEffect, useState} from 'react';
 import axios from 'axios';
 import {ACCESS_TOKEN_NAME} from './apiConstants';
 import Carousel from '../../Slideshow/Controls';
@@ -8,7 +8,7 @@ function LoginForm(props) {
     const [loggedInUser, foundUser] = useState()
     const [state, setState] = useState({
         username : "",
-        password : "", 
+        password : "",
         successMessage: "",
         errorMessage: ""
     })
@@ -44,7 +44,7 @@ function LoginForm(props) {
                 }))
                 localStorage.setItem(ACCESS_TOKEN_NAME, response.data.token);
                 redirectToMyAccount();
-                
+
             }
             else{
                 state.errorMessage = "Username or password is invalid"
@@ -72,18 +72,18 @@ function LoginForm(props) {
 
 
     const redirectToMyAccount = () => {
-        
+
         props.history.push("/myaccount");
     }
     const redirectToRegister = () => {
         props.history.push("/register");
 
-        
+
     }
     return (
         <div className="card col-12 col-lg-4 login-card mt-2 hv-center">
 
-                
+
                 <Carousel />
 
 

@@ -8,6 +8,7 @@
     "@testing-library/jest-dom": "^5.13.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "aws-amplify": "^4.2.0",
     "axios": "^0.21.1",
     "body-parser": "^1.19.0",
     "bootstrap": "^4.6.0",
@@ -30,6 +31,9 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "react-swipe": "^6.0.4",
+    "react-table": "^7.7.0",
+    "redux-form": "^8.3.7",
+    "semantic-ui-react": "^2.0.3",
     "web-vitals": "^1.1.2",
     "yup": "^0.32.9"
   },

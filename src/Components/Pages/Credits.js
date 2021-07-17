@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import {ACCESS_TOKEN_NAME} from "../Login/components/apiConstants";
 import Carousel from '../Slideshow/Controls';
+
+
 import './Credits.css';
 
 
@@ -85,8 +87,8 @@ function Credits() {
                 <div>
                     <table cellPadding={0} cellSpacing={0}>
                         <tr>
-                        <th>Coaster</th>
-                        <th>Park</th>
+                            <th>Coaster</th>
+                            <th>Park</th>
                         </tr>
 
                         {state.credits.map((coaster, id) =>
@@ -97,7 +99,7 @@ function Credits() {
                                 <tr>
                                     {coaster.park}
                                 </tr>
-                        </td>
+                            </td>
                         )}
                     </table>
                 </div>
