@@ -8,7 +8,7 @@ import {Link} from 'react-router-dom';
   }
 </script>
 
-function  Home() {
+function Home() {
 
   return (
     <div>

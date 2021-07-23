@@ -72,7 +72,6 @@ function LoginForm(props) {
 
 
     const redirectToMyAccount = () => {
-
         props.history.push("/myaccount");
     }
     const redirectToRegister = () => {

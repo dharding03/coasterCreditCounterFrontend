@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
+// import {useTable} from "react-table/src/hooks/useTable";
 import axios from 'axios';
-import {ACCESS_TOKEN_NAME} from "../Login/components/apiConstants";
+import {ACCESS_TOKEN_NAME, API_BASE_URL} from "../Login/components/apiConstants";
 import Carousel from '../Slideshow/Controls';
 
 
@@ -41,13 +42,13 @@ function Credits() {
                 "coaster": state.coaster,
                 "park": state.park,
             }
-            const ApiBaseUrl = "http://localhost:7080"
+            const apiBaseUrl = "http://localhost:7080"
             let config = {
                 headers: {
                     "Access-Control-Allow-Origin": "*",
                 }
             }
-            axios.post(ApiBaseUrl + "/coasters/credits", payload, config)
+            axios.post(apiBaseUrl + "/coasters/credits", payload, config)
                 .then(function (response) {
                     if (response.status === 200) {
                         setState(prevState => ({
@@ -76,6 +77,32 @@ function Credits() {
         }))
     }
 
+    // const removeCreditsListItem = (id) => {
+    //     let url = `http://localhost:7080/coasters/credits/${id}`
+    //
+    //     // const apiBaseUrl = "http://localhost:7080"
+    //     let config = {
+    //         headers: {
+    //             "Access-Control-Allow-Origin": "*",
+    //         }
+    //     }
+    //
+    //     // axios.delete(apiBaseUrl + "/coasters/credits/{id}", config)
+    //     //     .then(function (response) {
+    //     //         if (response.status === 200) {
+    //     //             setState(prevState => ({
+    //     //                 ...prevState,
+    //     //                 credits: [...prevState.credits, JSON.parse(response.config.data)],
+    //     //                 "successMessage": "Coaster successfully added!"
+    //     //             }))
+    //
+    //     axios.delete(url, config).then(res => {
+    //         const del = credits.filter(credits => id !== credits.id)
+    //         setCredits(del)
+    //         console.log("res", res)
+    //     })
+    // }
+
     return (
         <div className="card col-12 col-lg-4 addCoaster-card mt-2 hv-center">
             <h2>My Credits</h2>
@@ -83,24 +110,33 @@ function Credits() {
 
             <Carousel/>
 
+
             <div>
                 <div>
                     <table cellPadding={0} cellSpacing={0}>
+                        <thead>
                         <tr>
                             <th>Coaster</th>
                             <th>Park</th>
                         </tr>
+                        </thead>
+                        <tbody>
 
                         {state.credits.map((coaster, id) =>
-                            <td key={id}>
-                                <tr>
+                            <tr key={id}>
+
+                                <td>
                                     {coaster.coaster}
-                                </tr>
-                                <tr>
+                                </td>
+                                <td>
                                     {coaster.park}
-                                </tr>
-                            </td>
+                                </td>
+                                {/*<td>*/}
+                                {/*    <button onClick={() => removeCreditsListItem(id)}>Delete</button>*/}
+                                {/*</td>*/}
+                            </tr>
                         )}
+                        </tbody>
                     </table>
                 </div>
                 <form>

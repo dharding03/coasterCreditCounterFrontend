@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import {useTable} from 'react-table';
 import axios from 'axios';
 import {ACCESS_TOKEN_NAME} from "../Login/components/apiConstants";
 import Carousel from '../Slideshow/Controls';
 
 import './bucketList.css';
-
 
 
 function BucketList(factory, deps) {
@@ -30,7 +29,7 @@ function BucketList(factory, deps) {
         successMessage: ""
     })
     const handleChange = (e) => {
-        const { id, value } = e.target
+        const {id, value} = e.target
         setState(prevState => ({
             ...prevState,
             [id]: value
@@ -79,13 +78,23 @@ function BucketList(factory, deps) {
         }))
     }
 
-
-
+    // const removeBucketListItem = (id) => {
+    //     let url = `http://localhost:7080/coasters/credits/${id}`
+    //
+    //
+    //     let config = {
+    //         headers: {
+    //             "Access-Control-Allow-Origin": "*",
+    //         }
+    //     }
+    //
+    //
+    // }
     return (
         <div className="card col-12 col-lg-4 addCoaster-card mt-2 hv-center">
 
             <h2>My Bucket List</h2>
-            <Carousel />
+            <Carousel/>
 
 
             <div>
@@ -93,22 +102,27 @@ function BucketList(factory, deps) {
                 <div>
                     <table cellPadding={0} cellSpacing={0}>
                         <thead>
-
+                        <tr>
+                            <th>Coaster</th>
+                            <th>Park</th>
+                        </tr>
                         </thead>
-                            <tbody>
-                                {state.bucketList.map((coaster, id) =>
-                                    <td key={id}>
-                                        <tr>
-                                            {coaster.coaster}
+                        <tbody>
+                        {state.bucketList.map((coaster, id) =>
+                            <tr key={id}>
+                                <td>
+                                    {coaster.coaster}
 
-                                        </tr>
-                                        <tr>
-                                            {coaster.park}
-                                        </tr>
-                                    </td>
-
-                                )}
-                            </tbody>
+                                </td>
+                                <td>
+                                    {coaster.park}
+                                </td>
+                                {/*<td>*/}
+                                {/*    <button onClick={() => removeBucketListItem(id)}>Delete</button>*/}
+                                {/*</td>*/}
+                            </tr>
+                        )}
+                        </tbody>
                     </table>
                 </div>
 
@@ -121,21 +135,21 @@ function BucketList(factory, deps) {
                             id="coaster"
                             placeholder="Add Coaster"
                             value={state.coaster}
-                            onChange={handleChange} />
+                            onChange={handleChange}/>
                     </div>
                     <div className="form-group text-left">
                         <label htmlFor="addpark" type="text">Add Park</label>
                         <input type="addPark"
-                            className="form-control"
-                            id="park"
-                            placeholder="Add Park"
-                            value={state.park}
-                            onChange={handleChange} />
+                               className="form-control"
+                               id="park"
+                               placeholder="Add Park"
+                               value={state.park}
+                               onChange={handleChange}/>
                     </div>
                     <div>
                         <button type="submit"
-                            className="btn btn-primary"
-                            onClick={handleSubmitClick}
+                                className="btn btn-primary"
+                                onClick={handleSubmitClick}
                         >Add
                         </button>
                     </div>
