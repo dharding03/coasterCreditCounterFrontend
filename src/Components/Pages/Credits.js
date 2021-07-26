@@ -120,15 +120,15 @@ function Credits() {
                         </thead>
                         <tbody>
 
-                        {state.credits.map((coaster, id) =>
-                            <tr key={id}>
+                        {state.credits.map((credit, index) =>
+                            <tr key={index}>
 
                                 <td>
                                     {credit.coaster}
 
                                 </td>
                                 <td>
-                                    {coaster.park}
+                                    {credit.park}
                                 </td>
                                 <td>
                                     <button onClick={() => deleteCreditsItem(credit.id)}><AiFillDelete /></button>
