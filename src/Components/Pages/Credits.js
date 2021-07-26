@@ -1,18 +1,19 @@
 import React, {useState, useEffect} from 'react';
-// import {useTable} from "react-table/src/hooks/useTable";
+import { IconName } from "react-icons/fa";
 import axios from 'axios';
 import {ACCESS_TOKEN_NAME, API_BASE_URL} from "../Login/components/apiConstants";
 import Carousel from '../Slideshow/Controls';
 
 
 import './Credits.css';
+import {AiFillDelete} from "react-icons/all";
 
 
 function Credits() {
     const [credits, setCredits] = useState([])
 
     useEffect(() => {
-        fetch("http://localhost:7080/coasters/credits")
+        fetch("http://localhost:7080/credits")
             .then(response => response.json())
             .then(json => {
                 setCredits(json)
@@ -48,7 +49,7 @@ function Credits() {
                     "Access-Control-Allow-Origin": "*",
                 }
             }
-            axios.post(apiBaseUrl + "/coasters/credits", payload, config)
+            axios.post(apiBaseUrl + "/credits", payload, config)
                 .then(function (response) {
                     if (response.status === 200) {
                         setState(prevState => ({
@@ -77,34 +78,31 @@ function Credits() {
         }))
     }
 
-    // const removeCreditsListItem = (id) => {
-    //     let url = `http://localhost:7080/coasters/credits/${id}`
-    //
-    //     // const apiBaseUrl = "http://localhost:7080"
-    //     let config = {
-    //         headers: {
-    //             "Access-Control-Allow-Origin": "*",
-    //         }
-    //     }
-    //
-    //     // axios.delete(apiBaseUrl + "/coasters/credits/{id}", config)
-    //     //     .then(function (response) {
-    //     //         if (response.status === 200) {
-    //     //             setState(prevState => ({
-    //     //                 ...prevState,
-    //     //                 credits: [...prevState.credits, JSON.parse(response.config.data)],
-    //     //                 "successMessage": "Coaster successfully added!"
-    //     //             }))
-    //
-    //     axios.delete(url, config).then(res => {
-    //         const del = credits.filter(credits => id !== credits.id)
-    //         setCredits(del)
-    //         console.log("res", res)
-    //     })
-    // }
+    const deleteCreditsItem = (id) => {
+        let config = {
+            headers: {
+                "Access-Control-Allow-Origin": "*"
+            }
+        }
+
+        axios.delete(`http://localhost:7080/credits/${id}`, config)
+            .then(function (response) {
+                if (response.status === 200) {
+                    window.confirm("Are you sure you'd like to delete this?")
+                    setState((prevState => ({
+                        ...prevState,
+                        credits: prevState.credits.filter(credit => credit.id !== id)
+                    })))
+                }
+                console.log(response)
+            })
+            .catch(function (error) {
+                console.log('error', error);
+            })
+    }
 
     return (
-        <div className="card col-12 col-lg-4 addCoaster-card mt-2 hv-center">
+        <div className=" col-12 col-lg-6 addCoaster-card mt-2 hv-center">
             <h2>My Credits</h2>
 
 
@@ -113,7 +111,7 @@ function Credits() {
 
             <div>
                 <div>
-                    <table cellPadding={0} cellSpacing={0}>
+                    <table cellPadding={5} cellSpacing={5}>
                         <thead>
                         <tr>
                             <th>Coaster</th>
@@ -126,14 +124,15 @@ function Credits() {
                             <tr key={id}>
 
                                 <td>
-                                    {coaster.coaster}
+                                    {credit.coaster}
+
                                 </td>
                                 <td>
                                     {coaster.park}
                                 </td>
-                                {/*<td>*/}
-                                {/*    <button onClick={() => removeCreditsListItem(id)}>Delete</button>*/}
-                                {/*</td>*/}
+                                <td>
+                                    <button onClick={() => deleteCreditsItem(credit.id)}><AiFillDelete /></button>
+                                </td>
                             </tr>
                         )}
                         </tbody>

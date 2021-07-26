@@ -5,12 +5,14 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import "bootswatch/dist/cosmo/bootstrap.min.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {BrowserRouter} from "react-router-dom";
+import {BrowserRouter, Route} from "react-router-dom";
 
 ReactDOM.render(
     <React.StrictMode>
         <BrowserRouter>
-            <App/>
+            <Route path="/" component={App}>
+
+            </Route>
         </BrowserRouter>
     </React.StrictMode>,
     document.getElementById('root')

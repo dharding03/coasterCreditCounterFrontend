@@ -24,23 +24,17 @@ function NavBar() {
                     <Route exact path="/">
                         <Redirect to="/home"></Redirect>
                     </Route>
-                    <Route path="/bucketlist">
-                        <BucketList/>
+                    <Route path="/bucketlist" component={BucketList}>
                     </Route>
-                    <Route path="/login">
-                        <LoginForm/>
+                    <Route path="/login" component={LoginForm}>
                     </Route>
-                    <Route path="/register">
-                        <RegistrationForm/>
+                    <Route path="/register" component={RegistrationForm}>
                     </Route>
-                    <Route path="/home">
-                        <Home/>
+                    <Route path="/home" component={Home}>
                     </Route>
-                    <Route path="/mycredits">
-                        <Credits/>
+                    <Route path="/mycredits" component={Credits}>
                     </Route>
-                    <Route path="/myaccount">
-                        <MyAccount/>
+                    <Route path="/myaccount" component={MyAccount}>
                     </Route>
                 </Switch>
 

@@ -20,7 +20,6 @@ function App() {
                     <Link to="/mycredits" class="navbar-brand">My Credits</Link>
                     <Link to="/bucketlist" class="navbar-brand">Bucket List</Link>
                     <Link to="/myaccount" class="navbar-brand">My Account</Link>
-                    <Link to="/register" />
                 </nav>
                 {/*<NavBar className="nav"/>*/}
                 <div className="routes">

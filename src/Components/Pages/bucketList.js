@@ -5,13 +5,15 @@ import {ACCESS_TOKEN_NAME} from "../Login/components/apiConstants";
 import Carousel from '../Slideshow/Controls';
 
 import './bucketList.css';
+import {AiFillDelete} from "react-icons/all";
+import * as credits from "mysql";
 
 
 function BucketList(factory, deps) {
 
     const [bucketList, setBucketList] = useState([])
     useEffect(() => {
-        fetch("http://localhost:7080/coasters/bucketlist")
+        fetch("http://localhost:7080/bucketlist")
             .then(response => response.json())
             .then(json => {
                 setBucketList(json)
@@ -48,7 +50,7 @@ function BucketList(factory, deps) {
                     "Access-Control-Allow-Origin": "*",
                 }
             }
-            axios.post(apiBaseUrl + "/coasters/bucketlist", payload, config)
+            axios.post(apiBaseUrl + "/bucketlist", payload, config)
                 .then(function (response) {
                     if (response.status === 200) {
                         setState(prevState => ({
@@ -78,20 +80,54 @@ function BucketList(factory, deps) {
         }))
     }
 
-    // const removeBucketListItem = (id) => {
-    //     let url = `http://localhost:7080/coasters/credits/${id}`
-    //
-    //
+    const deleteBucketlistItem = (id) => {
+
+        let config = {
+            headers: {
+                "Access-Control-Allow-Origin": "*"
+            }
+        }
+
+        axios.delete(`http://localhost:7080/coasters/bucketlist/${id}`, config)
+            .then(function (response) {
+                if (response.status === 200) {
+                    alert("It is done")
+                    setState((prevState => ({
+                        ...prevState,
+                        bucketList: prevState.bucketList.filter(bucketList => bucketList.id !== id)
+                    })))
+                }
+                console.log(response)
+            })
+            .catch(function (error) {
+                console.log('error', error);
+            })
+    }
+
+
+    // const moveToCredits = (id) => {
     //     let config = {
     //         headers: {
-    //             "Access-Control-Allow-Origin": "*",
+    //             "Access-Control-Allow-Origin": "*"
     //         }
     //     }
     //
-    //
+    //     axios.post("http://localhost:7080/credits", config)
+    //         .then(function (response) {
+    //             if (response.status === 200) {
+    //                 setState(prevState => ({
+    //                     ...prevState,
+    //                     credits: [...prevState.credits, JSON.parse(response.config.data)]
+    //                 }))
+    //                 // credits.push(JSON.parse(response.config.data))
+    //                 // localStorage.setItem(ACCESS_TOKEN_NAME, response.data.token)
+    //             }
+    //         })
     // }
+
+
     return (
-        <div className="card col-12 col-lg-4 addCoaster-card mt-2 hv-center">
+        <div className=" col-12 col-lg-6 addCoaster-card mt-2 hv-center">
 
             <h2>My Bucket List</h2>
             <Carousel/>
@@ -100,7 +136,7 @@ function BucketList(factory, deps) {
             <div>
 
                 <div>
-                    <table cellPadding={0} cellSpacing={0}>
+                    <table cellPadding={5} cellSpacing={5}>
                         <thead>
                         <tr>
                             <th>Coaster</th>
@@ -108,18 +144,18 @@ function BucketList(factory, deps) {
                         </tr>
                         </thead>
                         <tbody>
-                        {state.bucketList.map((coaster, id) =>
-                            <tr key={id}>
+                        {state.bucketList.map((bucketList, index) =>
+                            <tr key={index}>
                                 <td>
-                                    {coaster.coaster}
+                                    {bucketList.coaster}
 
                                 </td>
                                 <td>
-                                    {coaster.park}
+                                    {bucketList.park}
                                 </td>
-                                {/*<td>*/}
-                                {/*    <button onClick={() => removeBucketListItem(id)}>Delete</button>*/}
-                                {/*</td>*/}
+                                <td>
+                                    <button onClick={() => deleteBucketlistItem(bucketList.id)}><AiFillDelete/></button>
+                                </td>
                             </tr>
                         )}
                         </tbody>

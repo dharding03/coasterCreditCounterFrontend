@@ -2,6 +2,7 @@ import React, {Component, useEffect, useState} from 'react';
 import axios from 'axios';
 import {ACCESS_TOKEN_NAME} from './apiConstants';
 import Carousel from '../../Slideshow/Controls';
+import {withRouter} from "react-router";
 
 function LoginForm(props) {
     const [user, setUser] = useState({})
@@ -76,11 +77,9 @@ function LoginForm(props) {
     }
     const redirectToRegister = () => {
         props.history.push("/register");
-
-
     }
     return (
-        <div className="card col-12 col-lg-4 login-card mt-2 hv-center">
+        <div className="col-12 col-lg-6 login-card mt-2 hv-center">
 
 
                 <Carousel />
@@ -115,4 +114,4 @@ function LoginForm(props) {
     )
 }
 
-export default LoginForm;
+export default withRouter(LoginForm);

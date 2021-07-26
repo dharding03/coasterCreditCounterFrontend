@@ -41,8 +41,6 @@ function SearchBar() {
                 <input type="text" placeholder="search" value={q} onChange={(e) => setQ(e.target.value)} />
             </div>
             {dataTable}
-           
-
         </div>
     )
 }

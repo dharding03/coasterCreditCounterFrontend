@@ -4,6 +4,7 @@ import { ACCESS_TOKEN_NAME } from './apiConstants'
 import Carousel from '../../Slideshow/Controls';
 import {FieldArray} from "formik";
 import {FormInput} from "semantic-ui-react";
+import {withRouter} from "react-router";
 
 
 function RegistrationForm(props) {
@@ -94,7 +95,7 @@ function RegistrationForm(props) {
         }
     }
     return (
-        <div className="card col-12 col-lg-4 login-card mt-2 hv-center">
+        <div className="col-12 col-lg-6 login-card mt-2 hv-center">
 
 
 
@@ -183,4 +184,4 @@ function RegistrationForm(props) {
     )
 }
 
-export default RegistrationForm;
+export default withRouter(RegistrationForm);
